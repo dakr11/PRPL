@@ -1,9 +1,11 @@
 # Investigation of the feasibility of the plasma position stabilization at tGOLEM
 The project aims to investigate the feasibility of plasma position stabilization at Tokamak GOLEM. 
 
-> *Reduce uncertainties from the past. First understand, then construct.* 
+> *Reduce uncertainties from the past. First understand, then construct*
+>  
 > *Gather the information on plasma position stabilization in one place.*
-> *Uncover the potential limits*
+> 
+> *Uncover the potential limits.*
 
 ## Introduction
 One of the primary objectives of this project is to analyze the causes of plasma motion. As seen in Figure ..., characteristic plasma movement at GOLEM is inward in the radial direction and upward in the vertical direction. 
