@@ -1,18 +1,17 @@
 # Investigation of the feasibility of the plasma position stabilization at tGOLEM
 The project aims to investigate the feasibility of plasma position stabilization at Tokamak GOLEM. 
 
-## Motto
-*Reduce uncertainties from the past. => First understand, then construct.*
+> *Reduce uncertainties from the past. First understand, then construct.*
 
 ## Introduction
-One of the primary objectives of this project is to analyze the causes of plasma motion. As seen in Figure ..., chracteristic plasma movement at GOLEM is inward in the radial direction and upward in the vertical direction. 
+One of the primary objectives of this project is to analyze the causes of plasma motion. As seen in Figure ..., characteristic plasma movement at GOLEM is inward in the radial direction and upward in the vertical direction. 
 
 
 
 ## Problems
 * Impact of the copper shell
 * Cause of inward and upward plasma movement
-* Magnetic fields and its impact on magnetic diagnostics 
+* Magnetic fields and their impact on magnetic diagnostics 
 * Current state of the plasma stabilization
 * Discharge quality enhancement 
 
@@ -24,7 +23,7 @@ The modulation of the poloidal magnetic field along the torus, produced by the l
 
 
 ## Discharge quality improvement
-The duration of the discharge is closely tied to its quality, which encompasses factors like wall conditioning and instabilities. Additionally, the discharge quality is influenced by the current state of the machine and uncertainties in the technologies used, such as gas puffing. 
+The discharge duration is closely tied to its quality, encompassing factors like wall conditioning and instabilities. Additionally, the discharge quality is influenced by the current state of the machine and uncertainties in the technologies used, such as gas puffing. 
 
 Consequently, applying external magnetic fields for plasma position control does not always guarantee the extension of the discharge. Therefore, before starting the position control, it is required to find the optimal parameters initiating the discharge ($U_{CD}, U_{Bt}, p$).
 
