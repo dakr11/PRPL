@@ -28,16 +28,28 @@ The time constant of the copper shell was measured and compared with a model in 
 The modulation of the poloidal magnetic field along the torus, produced by the limbs of the transformer and by the diagnostic windows in the copper shell was investigated [Valovic](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/Valovic_Magnetic_Diagnostics_CZJP_88.pdf) at then-existing CASTOR tokamak (= previous version of tGOLEM). The results of those measurements are seen in Figure ...  
 
 
-## Discharge quality improvement
-The discharge duration is closely tied to its quality, encompassing factors like wall conditioning and instabilities. Additionally, the discharge quality is influenced by the current state of the machine and uncertainties in the technologies used, such as gas puffing. 
+## Discharge performance
+The discharge duration is closely tied to its quality/performance, encompassing factors like wall conditioning and instabilities. Additionally, the discharge quality is influenced by the current state of the machine and uncertainties in the technologies used, such as gas puffing. 
 
 Consequently, applying external magnetic fields for plasma position control does not always guarantee the discharge extension. Therefore, before starting the position control, it is required to find the optimal parameters initiating the discharge ($U_{CD}, U_{Bt}, T_{CD}, T_{Bt}, p$). 
 
-What role does each of them play (impact on breakdown, etc.)?
+*What role does each of them play (impact on breakdown, etc.)? - see [M.Odstrcil report](http://golem.fjfi.cvut.cz/wiki/Experiments/BreakDownStudies/Reports/ToBeCategorized/13Odstrcilove/)* 
 
-Compare very nice shot [\#29457](http://golem.fjfi.cvut.cz/shots/29457/), performed without stabilization, with shot [\#39125](http://golem.fjfi.cvut.cz/shots/39125/) performed with stabilization. 
+Compare very nice shot [\#29457](http://golem.fjfi.cvut.cz/shots/29457/), performed without stabilization, with shot [\#39125](http://golem.fjfi.cvut.cz/shots/39125/) performed with stabilization. (*Pay attention, the discharge duration seems to be identified differently for the old discharges!*) 
 
-### Symmetries 
+
+From [Valovic: Plasma Position](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/ValovicM_Plasma_Control_Position_CZJP_89.pdf):
+'''
+It (the current in the external quadrupole coils) starts from a pre-programmed non-zero level which is optimal for breakdown.
+'''
+
+Another important note from the paper:
+'''
+The current in the internal quadrupole coils were proportional to the primary transformer current.
+'''
+- Why? To eliminate stray magnetic field? Or is it technology issue?
+
+### Fields orientation 
 [impact of fields orientation on plasma breakdown](http://golem.fjfi.cvut.cz/wiki/TrainingCourses/Universities/CTU.cz/PRPL/2015-2016/AdamSem/index)
 
 ## Technical limits 
@@ -55,6 +67,4 @@ As mentioned earlier, the discharge duration is influenced by various factors an
 <div id="refs"></div>
 
 ### Approach
-
-
 
