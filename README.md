@@ -1,7 +1,7 @@
 # Investigation of the feasibility of the plasma position stabilization at tGOLEM
 The project aims to investigate the feasibility of plasma position stabilization at Tokamak GOLEM. 
 
-> *Reduce uncertainties from the past. First understand, then construct*
+> *Reduce uncertainties from the past. First understand, then construct.*
 >  
 > *Gather the information on plasma position stabilization in one place.*
 > 
@@ -17,12 +17,12 @@ One of the primary objectives of this project is to analyze the causes of plasma
 * Cause of inward and upward plasma movement
 * Magnetic fields and their impact on magnetic diagnostics 
 * Discharge quality 
-* Technical limits
+* Technological limits
 * Plasma position stabilization (most current status)
 
 
 ## Copper shell
-The time constant of the copper shell was measured and compared with a model in [A. Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y). The time constant was determined as $\tau = $
+The time constant of the copper shell was measured and compared with a model in [A.Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y). The time constant was determined as $\tau = $
 
 
 The modulation of the poloidal magnetic field along the torus, produced by the limbs of the transformer and by the diagnostic windows in the copper shell was investigated [Valovic](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/Valovic_Magnetic_Diagnostics_CZJP_88.pdf) at then-existing CASTOR tokamak (= previous version of tGOLEM). The results of those measurements are seen in Figure ...  
@@ -39,20 +39,20 @@ Compare very nice shot [\#29457](http://golem.fjfi.cvut.cz/shots/29457/), perfor
 
 
 From [Valovic: Plasma Position](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/ValovicM_Plasma_Control_Position_CZJP_89.pdf):
-'''
+```
 It (the current in the external quadrupole coils) starts from a pre-programmed non-zero level which is optimal for breakdown.
-'''
+```
 
 Another important note from the paper:
-'''
+```
 The current in the internal quadrupole coils were proportional to the primary transformer current.
-'''
+```
 - Why? To eliminate stray magnetic field? Or is it technology issue?
 
 ### Fields orientation 
 [impact of fields orientation on plasma breakdown](http://golem.fjfi.cvut.cz/wiki/TrainingCourses/Universities/CTU.cz/PRPL/2015-2016/AdamSem/index)
 
-## Technical limits 
+## Technological limits 
 >*Is it even achievable with the current version of plasma position stabilization?*
 
 As mentioned earlier, the discharge duration is influenced by various factors and one important consideration is the possible amount of stored electrical energy used to drive a plasma current, i.e. the capacity $C_{CD}$. (E.g. in the case of the discharge \#39125 the current started decreasing during the discharge - *Do we even have any examples of 'ramp down'?* )
