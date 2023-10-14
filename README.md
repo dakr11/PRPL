@@ -1,1 +1,3 @@
 # PRPL
+
+## Motivation
