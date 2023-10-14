@@ -39,15 +39,13 @@ Compare very nice shot [\#29457](http://golem.fjfi.cvut.cz/shots/29457/), perfor
 
 
 From [Valovic: Plasma Position](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/ValovicM_Plasma_Control_Position_CZJP_89.pdf):
-```
-It (the current in the external quadrupole coils) starts from a pre-programmed non-zero level which is optimal for breakdown.
-```
+> "It (the current in the external quadrupole coils) starts from a pre-programmed non-zero level which is optimal for breakdown."
+
 
 Another important note from the paper:
-```
-The current in the internal quadrupole coils were proportional to the primary transformer current.
-```
-- Why? To eliminate stray magnetic field? Or is it technology issue?
+> "The current in the internal quadrupole coils was proportional to the primary transformer current."
+
+- Why? To eliminate stray magnetic fields? Or is it a technology issue?
 
 ### Fields orientation 
 [impact of fields orientation on plasma breakdown](http://golem.fjfi.cvut.cz/wiki/TrainingCourses/Universities/CTU.cz/PRPL/2015-2016/AdamSem/index)
