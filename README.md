@@ -11,7 +11,6 @@ The project aims to investigate the feasibility of plasma position stabilization
 One of the primary objectives of this project is to analyze the causes of plasma motion. As seen in Figure ..., characteristic plasma movement at GOLEM is inward in the radial direction and upward in the vertical direction. 
 
 
-
 ## Problems
 * Impact of the copper shell
 * Cause of inward and upward plasma movement
@@ -19,6 +18,14 @@ One of the primary objectives of this project is to analyze the causes of plasma
 * Discharge quality 
 * Technological limits
 * Plasma position stabilization (most current status)
+
+## Plasma position: Theory vs. Reality
+
+
+### Diagnostics: Mirnov coils & Fast Cameras
+
+
+### Toroidal effects: Shafranov shift
 
 
 ## Copper shell
@@ -48,6 +55,7 @@ Another important note from the paper:
 - Why? To eliminate stray magnetic fields? Or is it a technology issue?
 
 ### Fields orientation 
+- impact of stray fields;
 [impact of fields orientation on plasma breakdown](http://golem.fjfi.cvut.cz/wiki/TrainingCourses/Universities/CTU.cz/PRPL/2015-2016/AdamSem/index)
 
 ## Technological limits 
@@ -57,6 +65,14 @@ As mentioned earlier, the discharge duration is influenced by various factors an
 
 *What does the plasma current top determine?*
 
+
+## Causes of plasma movement
+- In Adela's BP, the source of the vertical plasma movement (denoted in her thesis as $F_z$) is assumed to be windings of the toroidal magnetic field *Why? Is it possible?*  
+- Another force acting on the plasma is the force caused by the copper shell; *Is the force driven by the eddy currents induced in the stainless steel vessel considered? If not, why?*
+
+## MHD assumption
+ - is not valid, when toroidal rotation is significant - *is it on GOLEM?* 
+ - *what does induce eddy cuurrents more? - rotation + inhomogenities or PFC?*
 
 
 ## References
