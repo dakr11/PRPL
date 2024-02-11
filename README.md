@@ -72,7 +72,7 @@ As mentioned earlier, the discharge duration is influenced by various factors an
 
 ## MHD assumption
  - is not valid, when toroidal rotation is significant - *is it on GOLEM?* 
- - *what does induce eddy cuurrents more? - rotation + inhomogenities or PFC?*
+ - *what does induce eddy currents more? - rotation + inhomogenities or PFC?*
 
 
 ## References
