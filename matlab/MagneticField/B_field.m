@@ -1,9 +1,11 @@
-function [Br, Bz, Br_tot, Bz_tot] = B_field(coord_B, coord_ext, I, c, method, n)
+function [Br, Bz, Br_tot, Bz_tot] = B_field(coord_B, coord_ext, c, method, n)
+% Returns magnetic field in units given by sc_I and sc_B
 % Inputs:
 %       coord_B   -> position (R,Z) in which B is interested
 %       coord_ext -> position of the coils generating magnetec field at coord_B 
-%                   (structure: N...number of coils, R, Z)
-%       I         -> array of the currents in the coils 
+%                   (structure: N...number of coils, R, Z, 
+%                               Id...array with current in coils
+%                               sc_I, sc_B...scaling)
 %       c         -> constants (structure)
 %       method    -> 'analytical' (using elliptic intgrals) / 'numerical' 
 %       n         -> number of coil elements (for purpose of numerical method)
@@ -16,12 +18,15 @@ function [Br, Bz, Br_tot, Bz_tot] = B_field(coord_B, coord_ext, I, c, method, n)
 
 
 Nloop = coord_ext.Nc*coord_ext.Nl;
+
+I = coord_ext.Id * coord_ext.sc_I;
+
 Br = zeros(1,Nloop); Bz = zeros(1,Nloop);
 
 switch method
     case "analytical"
         for j = 1:Nloop
-            [k2, f1, f2, K, E] = Elliptic_integral(coord_B.R, coord_ext.R(j), coord_B.Z, coord_ext.Z(j));
+            [~, f1, f2, ~, ~] = Elliptic_integral(coord_B.R, coord_ext.R(j), coord_B.Z, coord_ext.Z(j));
             Br(j) = c.mu0 * I(j)/(4*pi) * (coord_ext.Z(j) - coord_B.Z) * f1 / (coord_B.R * sqrt(coord_ext.R(j)*coord_B.R));
             Bz(j) = c.mu0 * I(j)/(4*pi) * (coord_B.R*f1 + coord_ext.R(j)*f2) / (coord_B.R * sqrt(coord_ext.R(j)*coord_B.R));
         end    
@@ -43,7 +48,7 @@ switch method
         end
 end
 
- Br_tot = sum(Br);
- Bz_tot = sum(Bz);
+ Br_tot = sum(Br) * coord_ext.sc_B;
+ Bz_tot = sum(Bz) * coord_ext.sc_B;
 
 end

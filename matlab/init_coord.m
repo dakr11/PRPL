@@ -2,15 +2,18 @@ function coord = init_coord
 %% Define the position (R,Z) of the conducting components
 
 %% Stabilization coils
-
 d = 3.33e-3; % Wire radius
+
+sc_I = 1e3; % Current scaling [kA]
+sc_B = 1e3; % Magnetic field scaling [mT]
 
 % Vertical stabilization
 VertStab.Nc = 4; % Number of coil
 VertStab.Nl = 8; % Number of loops per coil
 VertStab.R_base = [0.210; 0.210; 0.650; 0.650]; 
 VertStab.Z_base = [0.280; -0.280; 0.233; -0.257];
-VertStab.Id = [-1; -1; 1; 1];
+VertStab.Id = [-1; 1; -1; 1];
+VertStab.sc_I = sc_I; VertStab.sc_B = sc_B;
 if VertStab.Nl > 1 && mod(VertStab.Nl, 2) == 0
     n = VertStab.Nl/2;
     VertStab.R = cell2mat(arrayfun(@(x)  repmat(linspace(x - n*d, x + n*d, n),1,2) ,VertStab.R_base' ,'UniformOutput' ,false));
@@ -27,6 +30,7 @@ HorStab.Nl = 8;
 HorStab.R_base = [0.270; 0.270; 0.650; 0.650]; 
 HorStab.Z_base = [0.280; -0.280; 0.257; -0.233]; 
 HorStab.Id = [-1; -1; 1; 1];
+HorStab.sc_I = sc_I; HorStab.sc_B = sc_B;
 if HorStab.Nl > 1 && mod(HorStab.Nl, 2) == 0
     n = HorStab.Nl/2;
     HorStab.R = cell2mat(arrayfun(@(x)  repmat(linspace(x - n*d, x + n*d, n),1,2), HorStab.R_base' ,'UniformOutput' ,false));
@@ -40,6 +44,7 @@ end
 InnerQuadr.Nc = 4;
 InnerQuadr.Nl = 1;
 InnerQuadr.Id = [-1; -1; 1; 1];
+InnerQuadr.sc_I = sc_I; InnerQuadr.sc_B = sc_B;
 InnerQuadr.R = [0.3173; 0.3173; 0.4827; 0.4827];
 InnerQuadr.Z = [0.0827; -0.0827; 0.0827; -0.0827];
 

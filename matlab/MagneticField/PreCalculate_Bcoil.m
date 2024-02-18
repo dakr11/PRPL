@@ -23,19 +23,25 @@ hold off
 Bcoils = struct();
 
 %% 'Plasma' grid 
-dx = 0.005;
-dy = 0.005;
-x = 0.3:dx:0.5;
-y = -0.1:dy:0.1;
-[R, Z] = meshgrid(x, y);
+% dx = 0.005;
+% dy = 0.005;
+% x = 0.3:dx:0.5;
+% y = -0.1:dy:0.1;
+% [R, Z] = meshgrid(x, y);
 
 %% 'Tokamak' grid 
+% dense mesh grid => time-consuming (TODO: add tic toc)
 dx = 0.01;
 dy = 0.01;
+
+% dx = 0.05;
+% dy = 0.05;
+
 x = 0.1:dx:0.7;
 y = -0.3:dy:0.3;
 [R, Z] = meshgrid(x, y);
 
+%%
 Bcoils.meshgrid.x = x;
 Bcoils.meshgrid.y = y;
 Bcoils.meshgrid.R = R;
@@ -68,30 +74,64 @@ Bcoils = get_Bcoil(coord_ext, Bcoils, 'HorStab', c, n);
 coord_ext = coord.InnerQuadr;
 Bcoils = get_Bcoil(coord_ext, Bcoils, 'InnerQuadr', c, n);
 
-%% plot results
+%% load data from file
+% load Bcoils_attempt02.mat
 
-% load Bcoils_attempt01.mat
+%% Plot results - Numerical method
+field = 'Bpol'; method = 'num'; plot_type = 'pcolor';
+plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
+plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
+plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
 
-plot_results(coord, Bcoils, 'VertStab', 'num')
-plot_results(coord, Bcoils, 'HorStab', 'num')
-plot_results(coord, Bcoils, 'InnerQuadr', 'num')
+%% Contour plot
+field = 'Bpol'; method = 'num'; plot_type = 'contour';
+plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
+plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
+plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
+
+%% Plot results - Elliptic integrals
+field = 'Bpol'; method = 'ell'; plot_type = 'pcolor';
+plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
+plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
+plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
 
 %% Save data
-% save("MagneticField/Bcoils_attempt01.mat", "Bcoils")
+% save("MagneticField/Bcoils_attempt02.mat", "Bcoils")
+
+%% Save figs
+% savefigs('MagneticField/plots/attempt_0')
 
 %%
-function plot_results(coord, Bcoils, fname, method)
+function plot_results(coord, Bcoils, fname, method, field, plot_type)
+    % TODO: Ujasnit si, zda to brat v absolutni hodnote ci nikoliv!!!
+   
     R = Bcoils.meshgrid.R;
     Z = Bcoils.meshgrid.Z;
-    figure('Name', [fname, ', ', method]), clf, hold on
-    switch method
-        case 'num'
-            pcolor(R,Z, sqrt(Bcoils.(fname).num.Br_sum.^2 + Bcoils.(fname).num.Bz_sum.^2))
-        case 'ell'    
-            pcolor(R,Z, sqrt(Bcoils.(fname).ell.Br_sum.^2 + Bcoils.(fname).ell.Bz_sum.^2))
+
+    figure('Name', [fname, ', ', method, ', ', field, ', ', plot_type]), clf, hold on
+    switch field
+        case 'Bpol'
+            B = sqrt(Bcoils.(fname).(method).Br_sum.^2 + Bcoils.(fname).num.Bz_sum.^2);
+        case 'Br'
+            B = abs(Bcoils.(fname).(method).Br_sum);
+        case 'Bz'
+            B = abs(Bcoils.(fname).(method).Bz_sum);
+    end            
+
+    switch plot_type
+        case 'pcolor'
+            pcolor(R, Z, B)
+        case 'contour'
+            dense = 80;
+            contour(R, Z, B, dense,'ShowText','off')
     end        
+    % Plot coils, vessel
     plot(coord.(fname).R, coord.(fname).Z, 'color', "#D95319", 'LineStyle', 'none','Marker','.', 'LineWidth', 0.3, 'DisplayName','exVertStab')
     plot(coord.Vessel.R, coord.Vessel.Z, 'k.', 'LineWidth', 0.2, 'DisplayName','Vessel')
+    
     axis square
+    c = colorbar;
+    c.Label.String = 'B [mT/kA]'; 
     hold off
+
 end
