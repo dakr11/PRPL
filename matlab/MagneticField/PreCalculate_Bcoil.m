@@ -84,13 +84,13 @@ plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
 
 %% Contour plot
-field = 'Bpol'; method = 'num'; plot_type = 'contour';
+field = 'Bz'; method = 'num'; plot_type = 'contourf';
 plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
 
 %% Plot results - Elliptic integrals
-field = 'Bpol'; method = 'ell'; plot_type = 'pcolor';
+field = 'Bz'; method = 'ell'; plot_type = 'pcolor';
 plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
@@ -104,7 +104,7 @@ plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
 %%
 function plot_results(coord, Bcoils, fname, method, field, plot_type)
     % TODO: Ujasnit si, zda to brat v absolutni hodnote ci nikoliv!!!
-   
+    % TODO: Overit, ze nevadi log skala!
     R = Bcoils.meshgrid.R;
     Z = Bcoils.meshgrid.Z;
 
@@ -120,18 +120,25 @@ function plot_results(coord, Bcoils, fname, method, field, plot_type)
 
     switch plot_type
         case 'pcolor'
-            pcolor(R, Z, B)
+            pcolor(R, Z, (B))
+            c = colorbar;
+            c.Label.String = 'B [mT/kA]'; 
         case 'contour'
-            dense = 80;
-            contour(R, Z, B, dense,'ShowText','off')
+            dense = 30;
+            contour(R, Z, log10(B), dense,'ShowText','off')
+            c = colorbar;
+            c.Label.String = 'log_{10} B [mT/kA]'; 
+        case 'contourf'
+            dense = 20;
+            contourf(R, Z, log10(B), dense, 'ShowText','off')
+            c = colorbar;
+            c.Label.String = 'log_{10} B [mT/kA]'; 
     end        
     % Plot coils, vessel
     plot(coord.(fname).R, coord.(fname).Z, 'color', "#D95319", 'LineStyle', 'none','Marker','.', 'LineWidth', 0.3, 'DisplayName','exVertStab')
     plot(coord.Vessel.R, coord.Vessel.Z, 'k.', 'LineWidth', 0.2, 'DisplayName','Vessel')
     
     axis square
-    c = colorbar;
-    c.Label.String = 'B [mT/kA]'; 
     hold off
 
 end
