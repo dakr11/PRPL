@@ -19,18 +19,17 @@ function L = self_inductance_circuit(coord, c, method, n)
 % zahrnout do vztahu (vynasobeni N^2), nebo bude nutne definovat souradnice a pocitat
 % pro kazdy zavit zvlast (metoda s eliptickymi integrali ale bude dost mozna vice nepresna)
 
-% TODO: promyslet orientaci proudu - kde to delat
-
 %TODO: ZKONTROLOVAT VZOREC PRO NUMERICKY VYPOCET + OTESTOVAT PO VZORU
 % Test_B.m - Self inductance by mela byt dobre porovnatelna s
 % experimentem!!!
 
-M = zeros(coord.Nc, coord.Nc);
+Nloop = coord.Nc * coord.Nl;
+
+M = zeros(Nloop, Nloop);
 
 d = 3.33e-3; % wire radius -> TOBE changed (e.g. for plasma) -> move it among the inputs
 
 switch method
-
     case "analytical"
         for i = 1:coord.Nc % tady bude problem -> promyslet rozmer
             for j = 1:coord.Nc
@@ -72,5 +71,5 @@ switch method
         end
 end
 
-L = coord.Id' * M * coord.Id;
+L = coord.Id * M * coord.Id';
 

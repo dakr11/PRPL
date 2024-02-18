@@ -23,7 +23,10 @@ function M = mutual_inductance(coord_i, coord_j, c, method, n)
 
 % TODO: promyslet orientaci proudu - kde to delat
 
-M = zeros(coord_i.Nc, coord_j.Nc);
+Nloop_i = coord_i.Nc * coord_i.Nl;
+Nloop_j = coord_j.Nc * coord_j.Nl;
+
+M = zeros(Nloop_i, Nloop_j);
 
 d = 3.33e-3; % wire radius -> TOBE changed (e.g. for plasma) -> move it among the inputs
 
@@ -71,5 +74,5 @@ switch method
         end
 end
 
-M = coord_i.Id' * M * coord_i.Id;
+M = coord_i.Id * M * coord_i.Id';
 
