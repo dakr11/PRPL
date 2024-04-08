@@ -6,6 +6,9 @@ function savefigs(FolderName, varargin)
     for iFig = 1:length(FigList)
       FigHandle = FigList(iFig);
       FigName   = get(FigHandle, 'Name');
+      if isempty(FigName)
+          FigName   = num2str(get(FigHandle, 'Number'));
+      end    
       set(0, 'CurrentFigure', FigHandle);
       
       if numel(varargin) == 1

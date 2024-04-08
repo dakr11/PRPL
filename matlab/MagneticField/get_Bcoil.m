@@ -1,4 +1,4 @@
-function Bcoils = get_Bcoil(coord_ext,Bcoils, fname, c, n)
+function Bcoils = get_Bcoil(coord_ext, Bcoils, fname, c, n)
 % Inputs:
 %       coord_ext -> position of the coils generating magnetec field at coord_B 
 %                   (structure: N...number of coils, R, Z, 
@@ -27,9 +27,9 @@ function Bcoils = get_Bcoil(coord_ext,Bcoils, fname, c, n)
         for j = 1:numel(y)
             coord_B.Z = y(j);
     %       % Numerical approach
-            [Br_loops_num, Bz_loops_num, Br_num(i,j), Bz_num(i,j)] = B_field(coord_B, coord_ext, c, 'numerical', n);
+            [Br_loops_num(i,j,:), Bz_loops_num(i,j,:), Br_num(i,j), Bz_num(i,j)] = B_field(coord_B, coord_ext, c, 'numerical', n);
     %       % Analytical approach (using Elliptic integrals)
-            [Br_loops_ell, Bz_loops_ell, Br_ell(i,j), Bz_ell(i,j)] = B_field(coord_B, coord_ext, c, 'analytical', n);
+            [Br_loops_ell(i,j,:), Bz_loops_ell(i,j,:), Br_ell(i,j), Bz_ell(i,j)] = B_field(coord_B, coord_ext, c, 'analytical', n);
         end   
     end
     

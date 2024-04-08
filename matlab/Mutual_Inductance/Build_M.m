@@ -44,7 +44,7 @@ Mvh = mutual_inductance(coord.VertStab, coord.HorStab, c, method, 1e4);
 
 % Maa is symmetric
 Maa = [Lv Mvh;
-     Mvh Lh];
+       Mvh Lh];
 
 fprintf('\nLv:'), disp(Lv)
 fprintf('\nLh:'), disp(Lh)

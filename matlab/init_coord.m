@@ -21,6 +21,7 @@ if VertStab.Nl > 1 && mod(VertStab.Nl, 2) == 0
     VertStab.Id = cell2mat(arrayfun(@(x)  repmat(x,1, n*2) ,VertStab.Id' ,'UniformOutput' ,false));
 else    
     VertStab.R = VertStab.R_base; 
+    VertStab.Z = VertStab.Z_base; 
 end    
 
 
@@ -38,6 +39,7 @@ if HorStab.Nl > 1 && mod(HorStab.Nl, 2) == 0
     HorStab.Id = cell2mat(arrayfun(@(x)  repmat(x,1, n*2) ,HorStab.Id' ,'UniformOutput' ,false));
 else    
     HorStab.R = HorStab.R_base; 
+    HorStab.Z = HorStab.Z_base; 
 end    
 
 % Inner quadrupole
@@ -63,7 +65,7 @@ CopperShell.Z = arrayfun(@(phi) (CopperShell.minor_radius * sin(phi)), linspace(
 %% Tokamak vessel
 Vessel.minor_radius = 0.1; % [m]
 Vessel.major_radius = 0.4; % [m]
-Vessel.N = 1e3;
+Vessel.N = 1e3; % number of segments
 Vessel.R = arrayfun(@(phi) (Vessel.major_radius + Vessel.minor_radius * cos(phi)), linspace(0,2*pi,Vessel.N));
 Vessel.Z = arrayfun(@(phi) (Vessel.minor_radius * sin(phi)), linspace(0,2*pi,Vessel.N));
 %% Store all the coordinates in a structure 

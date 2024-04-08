@@ -21,7 +21,9 @@ hold off
 % of 1A flowing in the given coils; evaluated for each point of given grid
 
 Bcoils = struct();
-
+% Choose mode; 'load_from_file'/'calculate'
+mode = 'load_from_file';
+mode = 'calculate';
 %% 'Plasma' grid 
 % dx = 0.005;
 % dy = 0.005;
@@ -34,8 +36,8 @@ Bcoils = struct();
 dx = 0.01;
 dy = 0.01;
 
-% dx = 0.05;
-% dy = 0.05;
+dx = 0.05;
+dy = 0.05;
 
 x = 0.1:dx:0.7;
 y = -0.3:dy:0.3;
@@ -51,31 +53,37 @@ Bcoils.meshgrid.Z = Z;
 n = 1e4;
 c.mu0 = 4e-7 *pi;
 
-%% VERTICAL POSITION STABILIZATION
-%TODO: Predpocitat pro kazdy zavit, pak bude stavit prenasobit hodnotou
-% proudu v nem prochazejici(bez znamenka), ziskat tak Bloop a B = sum(Bloop)
-% dynamicky vyvoj je pak dan prave hodnotami proudu (dano indukcnosti a odporem)
-% -> reseni sady  obycejnych dif. rovnic pro proudy 
+%%
+switch mode
+    case 'calculate'
+        %TODO: Predpocitat pro kazdy zavit, pak bude stavit prenasobit hodnotou
+        % proudu v nem prochazejici(bez znamenka), ziskat tak Bloop a B = sum(Bloop)
+        % dynamicky vyvoj je pak dan prave hodnotami proudu (dano indukcnosti a odporem)
+        % -> reseni sady  obycejnych dif. rovnic pro proudy 
+        
+        % time consuming -> think of sth else -> proste se to predpocita a
+        % ulozi
+        
+        %TODO: nekde asi chyba zda se ze pocitano jen pro jednu civku a to nekde
+        %uplne jinde
+        
+        % VERTICAL POSITION STABILIZATION
+        coord_ext = coord.VertStab;
+        Bcoils = get_Bcoil(coord_ext, Bcoils, 'VertStab', c, n);
+        
+        % HORIZONTAL POSITION STABILIZATION
+        coord_ext = coord.HorStab;
+        Bcoils = get_Bcoil(coord_ext, Bcoils, 'HorStab', c, n);
+        
+        % INNER QUADRUPOLE
+        coord_ext = coord.InnerQuadr;
+        Bcoils = get_Bcoil(coord_ext, Bcoils, 'InnerQuadr', c, n);
+    
+    case 'load_from_file'
+        % load data from file
+        load Bcoils_attempt02.mat
+end        
 
-% time consuming -> think of sth else -> proste se to predpocita a
-% ulozi
-
-%TODO: nekde asi chyba zda se ze pocitano jen pro jednu civku a to nekde
-%uplne jinde
-
-coord_ext = coord.VertStab;
-Bcoils = get_Bcoil(coord_ext, Bcoils, 'VertStab', c, n);
-
-%% HORIZONTAL POSITION STABILIZATION
-coord_ext = coord.HorStab;
-Bcoils = get_Bcoil(coord_ext, Bcoils, 'HorStab', c, n);
-
-%% INNER QUADRUPOLE
-coord_ext = coord.InnerQuadr;
-Bcoils = get_Bcoil(coord_ext, Bcoils, 'InnerQuadr', c, n);
-
-%% load data from file
-% load Bcoils_attempt02.mat
 
 %% Plot results - Numerical method
 field = 'Bpol'; method = 'num'; plot_type = 'pcolor';

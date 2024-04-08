@@ -36,6 +36,9 @@ switch method
         for j = 1:Nloop
             sum_r = 0;
             sum_z = 0;
+            % fprintf(['\ncoord_ext_Rj: ', num2str(coord_ext.R(j))])
+            % fprintf(['\ncoord_ext_Zj: ', num2str(coord_ext.Z(j))])
+            % fprintf('\n')
             for k = 0:n-1
                 phi_k = 2 * pi * k / n;
                 Dk = ((coord_B.R - coord_ext.R(j)*cos(phi_k))^2 + ((coord_ext.R(j) * sin(phi_k))^2) + ((coord_B.Z - coord_ext.Z(j))^2))^(3/2);

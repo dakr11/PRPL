@@ -29,3 +29,6 @@ Methodology:
 
 
 1. Mww; 
+
+
+Side note: #44236 - prubeh proudu v civkach stabilizace -> 'tlumen'
