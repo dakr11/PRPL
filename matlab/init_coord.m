@@ -8,11 +8,14 @@ sc_I = 1e3; % Current scaling [kA]
 sc_B = 1e3; % Magnetic field scaling [mT]
 
 % Vertical stabilization
-VertStab.Nc = 4; % Number of coil
-VertStab.Nl = 8; % Number of loops per coil
 VertStab.R_base = [0.210; 0.210; 0.650; 0.650]; 
 VertStab.Z_base = [0.280; -0.280; 0.233; -0.257];
 VertStab.Id = [-1; 1; -1; 1];
+
+
+VertStab.Nc = numel(VertStab.Id); % Number of coil
+VertStab.Nl = 8; % Number of loops per coil
+
 VertStab.sc_I = sc_I; VertStab.sc_B = sc_B;
 if VertStab.Nl > 1 && mod(VertStab.Nl, 2) == 0
     n = VertStab.Nl/2;
@@ -26,11 +29,13 @@ end
 
 
 % Horizontal stabilization
-HorStab.Nc = 4;
-HorStab.Nl = 8;
 HorStab.R_base = [0.270; 0.270; 0.650; 0.650]; 
 HorStab.Z_base = [0.280; -0.280; 0.257; -0.233]; 
 HorStab.Id = [-1; -1; 1; 1];
+
+HorStab.Nc = numel(HorStab.Id);
+HorStab.Nl = 8;
+
 HorStab.sc_I = sc_I; HorStab.sc_B = sc_B;
 if HorStab.Nl > 1 && mod(HorStab.Nl, 2) == 0
     n = HorStab.Nl/2;

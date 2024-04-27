@@ -21,8 +21,8 @@ hold off
 % of 1A flowing in the given coils; evaluated for each point of given grid
 
 Bcoils = struct();
-% Choose mode; 'load_from_file'/'calculate'
-mode = 'load_from_file';
+% Select mode; 'load_from_file'/'calculate'
+% mode = 'load_from_file';
 mode = 'calculate';
 %% 'Plasma' grid 
 % dx = 0.005;
@@ -36,8 +36,8 @@ mode = 'calculate';
 dx = 0.01;
 dy = 0.01;
 
-dx = 0.05;
-dy = 0.05;
+% dx = 0.05;
+% dy = 0.05;
 
 x = 0.1:dx:0.7;
 y = -0.3:dy:0.3;
@@ -81,7 +81,7 @@ switch mode
     
     case 'load_from_file'
         % load data from file
-        load Bcoils_attempt02.mat
+        load Bcoils_stabilization.mat
 end        
 
 
@@ -104,36 +104,39 @@ plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
 
 %% Save data
-% save("MagneticField/Bcoils_attempt02.mat", "Bcoils")
+% save("MagneticField/Bcoils_stabilization.mat", "Bcoils")
 
 %% Save figs
-% savefigs('MagneticField/plots/attempt_0')
+% savefigs('MagneticField/plots/Bcoils_stabilization')
 
 %%
 function plot_results(coord, Bcoils, fname, method, field, plot_type)
     % TODO: Ujasnit si, zda to brat v absolutni hodnote ci nikoliv!!!
     % TODO: Overit, ze nevadi log skala!
+    % !!! Maticke s hodnotami magnetickeho pole se musi transponovat, 
+    % aby se dilo s meshgrid!!!
+
     R = Bcoils.meshgrid.R;
     Z = Bcoils.meshgrid.Z;
 
     figure('Name', [fname, ', ', method, ', ', field, ', ', plot_type]), clf, hold on
     switch field
         case 'Bpol'
-            B = sqrt(Bcoils.(fname).(method).Br_sum.^2 + Bcoils.(fname).num.Bz_sum.^2);
+            B = sqrt(Bcoils.(fname).(method).Br_sum.^2 + Bcoils.(fname).num.Bz_sum.^2)';
         case 'Br'
-            B = abs(Bcoils.(fname).(method).Br_sum);
+            B = abs(Bcoils.(fname).(method).Br_sum');
         case 'Bz'
-            B = abs(Bcoils.(fname).(method).Bz_sum);
+            B = abs(Bcoils.(fname).(method).Bz_sum');
     end            
 
     switch plot_type
         case 'pcolor'
-            pcolor(R, Z, (B))
+            pcolor(R, Z, log10(B))
             c = colorbar;
             c.Label.String = 'B [mT/kA]'; 
         case 'contour'
             dense = 30;
-            contour(R, Z, log10(B), dense,'ShowText','off')
+            contour(R, Z, (B), dense,'ShowText','off')
             c = colorbar;
             c.Label.String = 'log_{10} B [mT/kA]'; 
         case 'contourf'
