@@ -67,20 +67,20 @@ switch mode
         % ulozi
         
         % VERTICAL POSITION STABILIZATION
-        % coord_ext = coord.VertStab;
-        % Bcoils = get_Bcoil(coord_ext, Bcoils, 'VertStab', c, n);
-        % 
-        % % HORIZONTAL POSITION STABILIZATION
-        % coord_ext = coord.HorStab;
-        % Bcoils = get_Bcoil(coord_ext, Bcoils, 'HorStab', c, n);
-        % 
-        % % INNER QUADRUPOLE
-        % coord_ext = coord.InnerQuadr;
-        % Bcoils = get_Bcoil(coord_ext, Bcoils, 'InnerQuadr', c, n);
+        coord_ext = coord.VertStab;
+        Bcoils = get_Bcoil(coord_ext, Bcoils, 'VertStab', c, n);
 
-        % TOKAMAK'S CHAMBER
-        coord_ext = coord.Vessel;
-        Bcoils    = get_Bcoil(coord_ext, Bcoils, 'Vessel', c, n);
+        % HORIZONTAL POSITION STABILIZATION
+        coord_ext = coord.HorStab;
+        Bcoils = get_Bcoil(coord_ext, Bcoils, 'HorStab', c, n);
+
+        % INNER QUADRUPOLE
+        coord_ext = coord.InnerQuadr;
+        Bcoils = get_Bcoil(coord_ext, Bcoils, 'InnerQuadr', c, n);
+
+        % TOKAMAK'S CHAMBER - very time-consuming
+        % coord_ext = coord.Vessel;
+        % Bcoils    = get_Bcoil(coord_ext, Bcoils, 'Vessel', c, n);
     
     case 'load_from_file'
         % load data from file
@@ -105,12 +105,14 @@ field = 'Bz'; method = 'ell'; plot_type = 'pcolor';
 plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
-%% Plot results - Vessel -> to display effect of the stray field, should it be in 3D?
-plot_type = 'Br'; plot_type = 'contourf';
+%% Plot results - Vessel - TODO: pro num vychazi asi spatne!
+field = 'Bz'; method = 'ell'; plot_type = 'contourf';
+plot_results(coord, Bcoils, 'Vessel', method, field, plot_type)
+field = 'Br'; plot_type = 'contourf';
 plot_results(coord, Bcoils, 'Vessel', method, field, plot_type)
 
 %% Save data
-% save("MagneticField/Bcoils_stabilization.mat", "Bcoils")
+% save("MagneticField/Bcoils_vessel.mat", "Bcoils")
 
 %% Save figs
 % savefigs('MagneticField/plots/Bcoils_stabilization')
@@ -119,7 +121,7 @@ plot_results(coord, Bcoils, 'Vessel', method, field, plot_type)
 function plot_results(coord, Bcoils, fname, method, field, plot_type)
     % TODO: Ujasnit si, zda to brat v absolutni hodnote ci nikoliv!!!
     % TODO: Overit, ze nevadi log skala!
-    % !!! Maticke s hodnotami magnetickeho pole se musi transponovat, 
+    % !!! Matice s hodnotami magnetickeho pole se musi transponovat, 
     % aby se dilo s meshgrid!!!
 
     R = Bcoils.meshgrid.R;
