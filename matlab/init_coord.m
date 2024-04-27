@@ -67,12 +67,16 @@ CopperShell.N = 100; % This should ultimately corresponds to the number of eleme
 CopperShell.R = arrayfun(@(phi) (CopperShell.major_radius + CopperShell.minor_radius * cos(phi)), linspace(0, 2*pi, CopperShell.N));
 CopperShell.Z = arrayfun(@(phi) (CopperShell.minor_radius * sin(phi)), linspace(0, 2*pi, CopperShell.N));
 
-%% Tokamak vessel
+%% Tokamak's vessel
 Vessel.minor_radius = 0.1; % [m]
 Vessel.major_radius = 0.4; % [m]
-Vessel.N = 1e3; % number of segments
-Vessel.R = arrayfun(@(phi) (Vessel.major_radius + Vessel.minor_radius * cos(phi)), linspace(0,2*pi,Vessel.N));
-Vessel.Z = arrayfun(@(phi) (Vessel.minor_radius * sin(phi)), linspace(0,2*pi,Vessel.N));
+Vessel.Nc  = 1e1;           % number of segments (=coils)
+Vessel.Nl  = 1;             % number of loops per coil(segment)
+Vessel.R  = arrayfun(@(phi) (Vessel.major_radius + Vessel.minor_radius * cos(phi)), linspace(0,2*pi,Vessel.Nc));
+Vessel.Z  = arrayfun(@(phi) (Vessel.minor_radius * sin(phi)), linspace(0,2*pi,Vessel.Nc));
+Vessel.Id = ones(1, Vessel.Nc); % the currents flowing in the segments have the same direction, which is determined by the direction of Et
+Vessel.sc_I = sc_I; Vessel.sc_B = sc_B;
+
 %% Store all the coordinates in a structure 
 coord = struct( ...
     'VertStab', VertStab, ...
