@@ -14,7 +14,8 @@ if plot_scheme
     plot(coord.InnerQuadr.R, coord.InnerQuadr.Z, 'color',"#D95319",'LineStyle','none','Marker', 'o', 'LineWidth', 0.2, 'DisplayName','Inner Quadrupole')
     plot(coord.CopperShell.R, coord.CopperShell.Z, 'k.', 'LineWidth', 0.2, 'DisplayName','Copper Shell')
     legend('Location','northeastoutside');
-    axis square
+    ylabel('Z [m]'), xlabel('R [m]'), set(gca, 'FontWeight', 'bold')
+    % axis square
     hold off
 end
 
@@ -23,33 +24,9 @@ end
 % of 1A flowing in the given coils; evaluated for each point of given grid
 
 Bcoils = struct();
-% Select mode; 'load_from_file'/'calculate'
-% mode = 'load_from_file';
-mode = 'calculate';
-%% 'Plasma' grid 
-% dx = 0.005;
-% dy = 0.005;
-% x = 0.3:dx:0.5;
-% y = -0.1:dy:0.1;
-% [R, Z] = meshgrid(x, y);
-
-%% 'Tokamak' grid 
-% dense mesh grid => time-consuming (TODO: add tic toc)
-dx = 0.01;
-dy = 0.01;
-
-% dx = 0.05;
-% dy = 0.05;
-
-x = 0.1:dx:0.7;
-y = -0.3:dy:0.3;
-[R, Z] = meshgrid(x, y);
-
-%%
-Bcoils.meshgrid.x = x;
-Bcoils.meshgrid.y = y;
-Bcoils.meshgrid.R = R;
-Bcoils.meshgrid.Z = Z;
+% % Select mode; 'load_from_file'/'calculate'
+mode = 'load_from_file';
+% mode = 'calculate';
 
 %% constants
 n = 1e4;
@@ -66,6 +43,32 @@ switch mode
         % time consuming -> think of sth else -> proste se to predpocita a
         % ulozi
         
+        % 'Plasma' grid 
+        % dx = 0.005;
+        % dy = 0.005;
+        % x = 0.3:dx:0.5;
+        % y = -0.1:dy:0.1;
+        % [R, Z] = meshgrid(x, y);
+
+
+        % 'Tokamak' grid 
+        % dense mesh grid => time-consuming (TODO: add tic toc)
+        dx = 0.01;
+        dy = 0.01;
+        
+        % dx = 0.05;
+        % dy = 0.05;
+        
+        x = 0.1:dx:0.7;
+        y = -0.3:dy:0.3;
+        [R, Z] = meshgrid(x, y);
+        
+        %
+        Bcoils.meshgrid.x = x;
+        Bcoils.meshgrid.y = y;
+        Bcoils.meshgrid.R = R;
+        Bcoils.meshgrid.Z = Z;
+
         % VERTICAL POSITION STABILIZATION
         coord_ext = coord.VertStab;
         Bcoils = get_Bcoil(coord_ext, Bcoils, 'VertStab', c, n);
@@ -84,6 +87,7 @@ switch mode
     
     case 'load_from_file'
         % load data from file
+        % load Bcoils_vessel.mat
         load Bcoils_stabilization.mat
 end        
 
@@ -105,11 +109,22 @@ field = 'Bz'; method = 'ell'; plot_type = 'pcolor';
 plot_results(coord, Bcoils, 'VertStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'HorStab', method, field, plot_type)
 plot_results(coord, Bcoils, 'InnerQuadr', method, field, plot_type)
+
 %% Plot results - Vessel - TODO: pro num vychazi asi spatne!
 field = 'Bz'; method = 'ell'; plot_type = 'contourf';
 plot_results(coord, Bcoils, 'Vessel', method, field, plot_type)
 field = 'Br'; plot_type = 'contourf';
 plot_results(coord, Bcoils, 'Vessel', method, field, plot_type)
+
+%% Plot quiver
+id = 'Vessel';
+id = 'HorStab';
+R = Bcoils.meshgrid.R; 
+Z = Bcoils.meshgrid.Z;
+u = Bcoils.(id).ell.Br_sum;
+v = Bcoils.(id).ell.Bz_sum;
+figure, 
+quiver(R,Z,u,v)
 
 %% Save data
 % save("MagneticField/Bcoils_vessel.mat", "Bcoils")
@@ -123,6 +138,7 @@ function plot_results(coord, Bcoils, fname, method, field, plot_type)
     % TODO: Overit, ze nevadi log skala!
     % !!! Matice s hodnotami magnetickeho pole se musi transponovat, 
     % aby se dilo s meshgrid!!!
+    %TODO: pridat moznost udelat obrazky bez absolutni hodnoty a bez log.hodnoty mag. pole, jinak se to hur interpretuje 
 
     R = Bcoils.meshgrid.R;
     Z = Bcoils.meshgrid.Z;
@@ -134,7 +150,7 @@ function plot_results(coord, Bcoils, fname, method, field, plot_type)
         case 'Br'
             B = abs(Bcoils.(fname).(method).Br_sum');
         case 'Bz'
-            B = abs(Bcoils.(fname).(method).Bz_sum');
+            B = (Bcoils.(fname).(method).Bz_sum');
     end            
 
     switch plot_type
@@ -149,7 +165,7 @@ function plot_results(coord, Bcoils, fname, method, field, plot_type)
             c.Label.String = 'log_{10} B [mT/kA]'; 
         case 'contourf'
             dense = 20;
-            contourf(R, Z, log10(B), dense, 'ShowText','off')
+            contourf(R, Z, (B), dense, 'ShowText','off')
             c = colorbar;
             c.Label.String = 'log_{10} B [mT/kA]'; 
     end        
