@@ -30,10 +30,10 @@ The overall process is documented in the [logbook](Logbook.md).
 
 
 ## Copper shell
-The time constant of the copper shell was measured and compared with a model in [A.Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y). The time constant was determined to be $\tau = 15,45$ ms.
+The time constant of the copper shell was measured and compared with a model in [A.Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y). The time constant was determined to be $\tau = 15.45$ ms.
 
 
-The modulation of the poloidal magnetic field along the torus, produced by the limbs of the transformer and by the diagnostic windows in the copper shell was investigated [Valovic](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/Valovic_Magnetic_Diagnostics_CZJP_88.pdf) at then-existing CASTOR tokamak (= previous version of tGOLEM).  In this report the time constant was set to $\tau=$
+The modulation of the poloidal magnetic field along the torus, produced by the limbs of the transformer and by the diagnostic windows in the copper shell was investigated [Valovic](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/Valovic_Magnetic_Diagnostics_CZJP_88.pdf) at then-existing CASTOR tokamak (= previous version of tGOLEM). In this report the time constant was considered to be $\tau=1.80$ ms.
 
 
 <p align="center">

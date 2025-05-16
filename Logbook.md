@@ -59,12 +59,26 @@ Nový pocitac v kombinaci s redukcí (RS232 na HDMI) ATEN (+ nainstalovani prisl
 
 
 ### 26.4.2024
-- mereni s MSL sondou uvnitr komory tokamaku: http://golem.fjfi.cvut.cz/shots/0/Infrastructure/Homepage/psql/ShotsOfTheMission.php (za asistence Marka Tunkla a Lukáše Lobka) \
-- vysledky shrnuty zde...
+- mereni s MSL sondou uvnitr komory tokamaku: http://golem.fjfi.cvut.cz/shots/0/Infrastructure/Homepage/psql/ShotsOfTheMission.php (za asistence Marka Tunkla a Lukáše Lobka) 
+- vysledky shrnuty [zde](experiments/2024_04_26/GOLEM_MSL_24_04_26.pdf)
 
 
 
 ### 16.9. (46271-46280)
+<div style="text-align: center;">
+  <div style="display: inline-flex; gap: 20px;">
+    <div>
+      <img src="Figs/photos/probe_prep_crop.jpg" alt="Figure 1" width="450">
+      <p style="text-align: center;"><em>Figure 1: Sestavení sondy tGOLEM</em></p>
+    </div>
+    <div>
+      <img src="Figs/photos/session02_probe_in_chamber.jpg" alt="Figure 2" width="300">
+      <p style="text-align: center;"><em>Figure 2: </em></p>
+    </div>
+  </div>
+</div>
+
+
 **r = -8.5cm**\
 BtScan: 46271-46275\
 VertStab: 46276, 46280(wSaddle coil)\
