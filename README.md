@@ -1,4 +1,4 @@
-# Investigation of the feasibility of the plasma position stabilization at tGOLEM
+# Investigation of the Feasibility of the Plasma Position Stabilization at tGOLEM
 The project aims to investigate the feasibility of plasma position stabilization at Tokamak GOLEM. 
 
 > *Reduce uncertainties from the past. First understand, then construct.*
@@ -8,31 +8,39 @@ The project aims to investigate the feasibility of plasma position stabilization
 > *Uncover the potential limits.*
 
 ## Introduction
-One of the primary objectives of this project is to analyze the causes of plasma motion. As seen in Figure ..., characteristic plasma movement at GOLEM is inward in the radial direction and upward in the vertical direction. 
+One of the primary objectives of this project is to analyze the causes of plasma motion. As seen in Figure 1 characteristic plasma movement at GOLEM is inward in the radial direction and upward in the vertical direction. 
+
+
+<p align="center">
+  <img src="Figs/39121_FastCam_badShot.png" width="425"/> 
+  <br/>
+  <em>Figure 1: #39121</em>
+</p>
+
+The overall process is documented in the [logbook](Logbook.md).
 
 
 ## Problems
 * Impact of the copper shell
-* Cause of inward and upward plasma movement
+* Mechanisms behind inward and upward plasma movement
 * Magnetic fields and their impact on magnetic diagnostics 
 * Discharge quality 
 * Technological limits
 * Plasma position stabilization (most current status)
 
-## Plasma position: Theory vs. Reality
-
-
-### Diagnostics: Mirnov coils & Fast Cameras
-
-
-### Toroidal effects: Shafranov shift
-
 
 ## Copper shell
-The time constant of the copper shell was measured and compared with a model in [A.Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y). The time constant was determined as $\tau = $
+The time constant of the copper shell was measured and compared with a model in [A.Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y). The time constant was determined to be $\tau = 15,45$ ms.
 
 
-The modulation of the poloidal magnetic field along the torus, produced by the limbs of the transformer and by the diagnostic windows in the copper shell was investigated [Valovic](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/Valovic_Magnetic_Diagnostics_CZJP_88.pdf) at then-existing CASTOR tokamak (= previous version of tGOLEM). The results of those measurements are seen in Figure ...  
+The modulation of the poloidal magnetic field along the torus, produced by the limbs of the transformer and by the diagnostic windows in the copper shell was investigated [Valovic](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/Valovic_Magnetic_Diagnostics_CZJP_88.pdf) at then-existing CASTOR tokamak (= previous version of tGOLEM).  In this report the time constant was set to $\tau=$
+
+
+<p align="center">
+  <img src="Figs/Current_TimeConstant18.jpeg" width="425"/> 
+  <br/>
+  <em>Eddy currents in the Copper shell [1]</em>
+</p>
 
 
 ## Discharge performance
@@ -66,19 +74,17 @@ As mentioned earlier, the discharge duration is influenced by various factors an
 *What does the plasma current top determine?*
 
 
-## Causes of plasma movement
+## Origins of Plasma Displacement
 - In Adela's BP, the source of the vertical plasma movement (denoted in her thesis as $F_z$) is assumed to be windings of the toroidal magnetic field *Why? Is it possible?*  
 - Another force acting on the plasma is the force caused by the copper shell; *Is the force driven by the eddy currents induced in the stainless steel vessel considered? If not, why?*
 
-## MHD assumption
- - is not valid, when toroidal rotation is significant - *is it on GOLEM?* 
- - *what does induce eddy currents more? - rotation + inhomogenities or PFC?*
-
-
-## References
-
-
-<div id="refs"></div>
 
 ### Approach
 
+### Diagnostics
+**Plasma position:** Mirnov coils & Fast Cameras\
+**Magnetic field:** MSL probe & Mirnov coils & Saddle coil
+
+
+## References
+[1] [Yanovskiy, J., *Soukroma komunikace*, 2021]()

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="148mm"
+   height="105mm"
+   viewBox="0 0 148 105"
+   version="1.1"
+   id="svg225383"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="TFcoils_return_conductor.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview225385"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.5738528"
+     inkscape:cx="285.60485"
+     inkscape:cy="143.27896"
+     inkscape:window-width="1920"
+     inkscape:window-height="966"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs225380">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient225500">
+      <stop
+         style="stop-color:#1f6e27;stop-opacity:1;"
+         offset="0"
+         id="stop225496" />
+      <stop
+         style="stop-color:#1f6e27;stop-opacity:0;"
+         offset="1"
+         id="stop225498" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient225500"
+       id="linearGradient225502"
+       x1="47.553862"
+       y1="65.555481"
+       x2="97.763277"
+       y2="65.555481"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="opacity:0;fill:#1f6e27;stroke:#1f6e27;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+       id="path225468"
+       cx="69.309868"
+       cy="54.875965"
+       rx="21.914137"
+       ry="18.727356"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="opacity:0;fill:url(#linearGradient225502);stroke:#1f6e27;stroke-width:0.264999;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers;fill-opacity:1"
+       id="path225494"
+       cx="72.658569"
+       cy="65.555481"
+       rx="24.972208"
+       ry="16.431789"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#061e09;fill-opacity:1;stroke:#000000;stroke-width:0.265;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers;opacity:0.22488916;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path226151"
+       cx="74.538437"
+       cy="52.705338"
+       r="28.202488"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.072;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;paint-order:stroke fill markers;opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path226151-6"
+       cx="74.715515"
+       cy="52.719841"
+       r="18.322783"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <g
+       id="g232131"
+       transform="rotate(9.1929849,67.142144,55.180831)"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         d="M 61.702491,41.644318 49.997025,31.859731"
+         id="path229170-9"
+         sodipodi:nodetypes="cc" />
+      <g
+         id="g232125">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 57.265807,25.084119 c -1.767699,1.16123 -3.247299,2.227 -6.748259,6.153813 l 11.546579,9.943973 -12.067102,-9.322174"
+           id="path229166-2"
+           sodipodi:nodetypes="cccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="M 61.702491,41.644318 49.602588,32.437935"
+           id="path229300-9"
+           sodipodi:nodetypes="cc" />
+      </g>
+    </g>
+    <g
+       id="g232131-38"
+       transform="rotate(74.394107,73.743261,52.433462)"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         d="M 61.702491,41.644318 49.997025,31.859731"
+         id="path229170-9-0"
+         sodipodi:nodetypes="cc" />
+      <g
+         id="g232125-4">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+           id="path229166-2-0"
+           sodipodi:nodetypes="cccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="M 61.702491,41.644318 49.602588,32.437935"
+           id="path229300-9-9"
+           sodipodi:nodetypes="cc" />
+      </g>
+    </g>
+    <g
+       id="g232131-38-1"
+       transform="rotate(49.951636,73.427396,53.818778)"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         d="M 61.702491,41.644318 49.997025,31.859731"
+         id="path229170-9-0-9"
+         sodipodi:nodetypes="cc" />
+      <g
+         id="g232125-4-6">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+           id="path229166-2-0-2"
+           sodipodi:nodetypes="cccc" />
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="M 61.702491,41.644318 49.602588,32.437935 c -2.534877,2.562281 -4.390043,5.72157 -5.014651,7.511526"
+           id="path229300-9-9-5"
+           sodipodi:nodetypes="ccc" />
+      </g>
+    </g>
+    <g
+       id="g232545"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g232131-8"
+         transform="rotate(-13.90377,78.449714,49.376623)">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="M 61.702491,41.644318 49.997025,31.859731"
+           id="path229170-9-1"
+           sodipodi:nodetypes="cc" />
+        <g
+           id="g232125-3">
+          <path
+             style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+             d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+             id="path229166-2-1"
+             sodipodi:nodetypes="cccc" />
+          <path
+             style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+             d="M 61.702491,41.644318 49.602588,32.437935"
+             id="path229300-9-1"
+             sodipodi:nodetypes="cc" />
+        </g>
+      </g>
+      <g
+         id="g232499"
+         transform="rotate(-39.944495,54.214139,67.466578)">
+        <g
+           id="g232526"
+           transform="rotate(-4.3965006,92.188041,36.390659)">
+          <g
+             id="g232131-3"
+             transform="rotate(9.1929849,-29.508978,73.930658)">
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+               d="M 61.702491,41.644318 49.997025,31.859731"
+               id="path229170-9-8"
+               sodipodi:nodetypes="cc" />
+            <g
+               id="g232125-0">
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                 id="path229166-2-5"
+                 sodipodi:nodetypes="cccc" />
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="M 61.702491,41.644318 49.602588,32.437935"
+                 id="path229300-9-6"
+                 sodipodi:nodetypes="cc" />
+            </g>
+          </g>
+          <g
+             id="g232131-8-6"
+             transform="rotate(-13.90377,143.46099,50.027041)">
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+               d="M 61.702491,41.644318 49.997025,31.859731"
+               id="path229170-9-1-4"
+               sodipodi:nodetypes="cc" />
+            <g
+               id="g232125-3-0">
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                 id="path229166-2-1-0"
+                 sodipodi:nodetypes="cccc" />
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="M 61.702491,41.644318 49.602588,32.437935"
+                 id="path229300-9-1-4"
+                 sodipodi:nodetypes="cc" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g232545-2"
+       transform="rotate(-69.81143,73.785078,52.878903)"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g232131-8-67"
+         transform="rotate(-13.90377,78.449714,49.376623)">
+        <path
+           style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="M 61.702491,41.644318 49.997025,31.859731"
+           id="path229170-9-1-5"
+           sodipodi:nodetypes="cc" />
+        <g
+           id="g232125-3-6">
+          <path
+             style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+             d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+             id="path229166-2-1-9"
+             sodipodi:nodetypes="cccc" />
+          <path
+             style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+             d="M 61.702491,41.644318 49.602588,32.437935"
+             id="path229300-9-1-8"
+             sodipodi:nodetypes="cc" />
+        </g>
+      </g>
+      <g
+         id="g232499-7"
+         transform="rotate(-39.944495,54.214139,67.466578)">
+        <g
+           id="g232526-2"
+           transform="rotate(-4.3965006,92.188041,36.390659)">
+          <g
+             id="g232131-3-8"
+             transform="rotate(9.1929849,-29.508978,73.930658)">
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+               d="M 61.702491,41.644318 49.997025,31.859731"
+               id="path229170-9-8-2"
+               sodipodi:nodetypes="cc" />
+            <g
+               id="g232125-0-9">
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                 id="path229166-2-5-9"
+                 sodipodi:nodetypes="cccc" />
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="M 61.702491,41.644318 49.602588,32.437935"
+                 id="path229300-9-6-6"
+                 sodipodi:nodetypes="cc" />
+            </g>
+          </g>
+          <g
+             id="g232131-8-6-0"
+             transform="rotate(-13.90377,143.46099,50.027041)">
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+               d="M 61.702491,41.644318 49.997025,31.859731"
+               id="path229170-9-1-4-2"
+               sodipodi:nodetypes="cc" />
+            <g
+               id="g232125-3-0-7">
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                 id="path229166-2-1-0-6"
+                 sodipodi:nodetypes="cccc" />
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="M 61.702491,41.644318 49.602588,32.437935"
+                 id="path229300-9-1-4-1"
+                 sodipodi:nodetypes="cc" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g233189"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <g
+         id="g233227"
+         transform="rotate(44.213993,81.593107,51.854039)">
+        <g
+           id="g232545-3"
+           transform="rotate(180,75.834061,54.771013)">
+          <g
+             id="g232131-8-2"
+             transform="rotate(-13.90377,78.449714,49.376623)">
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+               d="M 61.702491,41.644318 49.997025,31.859731"
+               id="path229170-9-1-1"
+               sodipodi:nodetypes="cc" />
+            <g
+               id="g232125-3-5">
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                 id="path229166-2-1-99"
+                 sodipodi:nodetypes="cccc" />
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="M 61.702491,41.644318 49.602588,32.437935"
+                 id="path229300-9-1-1"
+                 sodipodi:nodetypes="cc" />
+            </g>
+          </g>
+          <g
+             id="g232499-4"
+             transform="rotate(-39.944495,54.214139,67.466578)">
+            <g
+               id="g232526-9"
+               transform="rotate(-4.3965006,92.188041,36.390659)">
+              <g
+                 id="g232131-3-1"
+                 transform="rotate(9.1929849,-29.508978,73.930658)">
+                <path
+                   style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                   d="M 61.702491,41.644318 49.997025,31.859731"
+                   id="path229170-9-8-0"
+                   sodipodi:nodetypes="cc" />
+                <g
+                   id="g232125-0-7">
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                     id="path229166-2-5-5"
+                     sodipodi:nodetypes="cccc" />
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="M 61.702491,41.644318 49.602588,32.437935"
+                     id="path229300-9-6-8"
+                     sodipodi:nodetypes="cc" />
+                </g>
+              </g>
+              <g
+                 id="g232131-8-6-7"
+                 transform="rotate(-13.90377,143.46099,50.027041)">
+                <path
+                   style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                   d="M 61.702491,41.644318 49.997025,31.859731"
+                   id="path229170-9-1-4-0"
+                   sodipodi:nodetypes="cc" />
+                <g
+                   id="g232125-3-0-4">
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                     id="path229166-2-1-0-8"
+                     sodipodi:nodetypes="cccc" />
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="M 61.702491,41.644318 49.602588,32.437935"
+                     id="path229300-9-1-4-0"
+                     sodipodi:nodetypes="cc" />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g
+           id="g232545-2-4"
+           transform="rotate(110.18857,74.513822,56.200707)">
+          <g
+             id="g232131-8-67-2"
+             transform="rotate(-13.90377,78.449714,49.376623)">
+            <path
+               style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+               d="M 61.702491,41.644318 49.997025,31.859731"
+               id="path229170-9-1-5-9"
+               sodipodi:nodetypes="cc" />
+            <g
+               id="g232125-3-6-6">
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                 id="path229166-2-1-9-1"
+                 sodipodi:nodetypes="cccc" />
+              <path
+                 style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                 d="M 61.702491,41.644318 49.602588,32.437935"
+                 id="path229300-9-1-8-0"
+                 sodipodi:nodetypes="cc" />
+            </g>
+          </g>
+          <g
+             id="g232499-7-4"
+             transform="rotate(-39.944495,54.214139,67.466578)">
+            <g
+               id="g232526-2-2"
+               transform="rotate(-4.3965006,92.188041,36.390659)">
+              <g
+                 id="g232131-3-8-2"
+                 transform="rotate(9.1929849,-29.508978,73.930658)">
+                <path
+                   style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                   d="M 61.702491,41.644318 49.997025,31.859731"
+                   id="path229170-9-8-2-2"
+                   sodipodi:nodetypes="cc" />
+                <g
+                   id="g232125-0-9-0">
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                     id="path229166-2-5-9-5"
+                     sodipodi:nodetypes="cccc" />
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="M 61.702491,41.644318 49.602588,32.437935"
+                     id="path229300-9-6-6-5"
+                     sodipodi:nodetypes="cc" />
+                </g>
+              </g>
+              <g
+                 id="g232131-8-6-0-2"
+                 transform="rotate(-13.90377,143.46099,50.027041)">
+                <path
+                   style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                   d="M 61.702491,41.644318 49.997025,31.859731"
+                   id="path229170-9-1-4-2-9"
+                   sodipodi:nodetypes="cc" />
+                <g
+                   id="g232125-3-0-7-0">
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="m 58.866791,24.493239 c 0,0 -4.346511,1.755183 -8.349243,6.744693 l 11.546579,9.943973 -12.067102,-9.322174"
+                     id="path229166-2-1-0-6-2"
+                     sodipodi:nodetypes="cccc" />
+                  <path
+                     style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+                     d="M 61.702491,41.644318 49.602588,32.437935"
+                     id="path229300-9-1-4-1-8"
+                     sodipodi:nodetypes="cc" />
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 62.200919,23.892839 60.937972,20.786814"
+       id="path235235"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 65.488092,22.818136 64.311599,19.791294"
+       id="path235237"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#ca132c;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 60.937972,20.786814 c -22.541911,9.78075 -26.40668,36.481421 -14.43238,51.870258 6.433256,8.267734 14.588784,16.175811 36.3171,13.133202"
+       id="path235239"
+       sodipodi:nodetypes="csc"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#ca132c;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 82.822692,85.790274 C 129.43681,73.546356 109.84594,9.130089 66.781127,19.035733 l -1.700332,-4.998372"
+       id="path235243"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 64.311598,19.791294 62.317111,14.85807"
+       id="path237862"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.44226px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ca132c;fill-opacity:1;stroke:none;stroke-width:0.215141"
+       x="65.894051"
+       y="14.00003"
+       id="text239817"
+       transform="scale(0.98081614,1.0195591)"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan239815"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.44226px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.215141;fill:#ca132c;fill-opacity:1"
+         x="65.894051"
+         y="14.00003">+</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="60.306591"
+       y="15.978037"
+       id="text239817-6"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan239815-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583"
+         x="60.306591"
+         y="15.978037">-</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ca132c;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="62.92255"
+       y="89.947296"
+       id="text255470"
+       inkscape:export-filename="/home/dani/Documents/jaderka/Master/PRPL/figs/draw/Bt_return_current_conductor.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan255468"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ca132c;fill-opacity:1;stroke-width:0.264583"
+         x="62.92255"
+         y="89.947296">Return current conductor</tspan></text>
+  </g>
+</svg>

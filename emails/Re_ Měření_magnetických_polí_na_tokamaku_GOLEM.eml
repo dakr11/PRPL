@@ -1,0 +1,556 @@
+Received: from AM8PR06MB6849.eurprd06.prod.outlook.com (2603:10a6:20b:1d1::14)
+ by DU2PR06MB8398.eurprd06.prod.outlook.com with HTTPS; Mon, 23 Oct 2023
+ 15:19:43 +0000
+Received: from DB8PR03CA0036.eurprd03.prod.outlook.com (2603:10a6:10:be::49)
+ by AM8PR06MB6849.eurprd06.prod.outlook.com (2603:10a6:20b:1d1::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6907.33; Mon, 23 Oct
+ 2023 15:19:41 +0000
+Received: from DU6PEPF00009524.eurprd02.prod.outlook.com
+ (2603:10a6:10:be:cafe::c4) by DB8PR03CA0036.outlook.office365.com
+ (2603:10a6:10:be::49) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6907.33 via Frontend
+ Transport; Mon, 23 Oct 2023 15:19:41 +0000
+Authentication-Results: spf=none (sender IP is 2a00:1450:4864:20::535)
+ smtp.mailfrom=ipp.cas.cz; dkim=pass (signature was verified)
+ header.d=ipp-cas-cz.20230601.gappssmtp.com;dmarc=none action=none
+ header.from=ipp.cas.cz;compauth=pass reason=106
+Received-SPF: None (protection.outlook.com: ipp.cas.cz does not designate
+ permitted sender hosts)
+Received: from mailgw3.cvut.cz (147.32.235.93) by
+ DU6PEPF00009524.mail.protection.outlook.com (10.167.8.5) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6933.15 via Frontend Transport; Mon, 23 Oct 2023 15:19:41 +0000
+Received: from mail-ed1-x535.google.com (mail-ed1-x535.google.com [IPv6:2a00:1450:4864:20::535])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mailgw3.cvut.cz (mailserver) with ESMTPS id 4SDf4W6PCczQvSQ
+	for <kropadan@fjfi.cvut.cz>; Mon, 23 Oct 2023 17:19:39 +0200 (CEST)
+Authentication-Results-Original: mailin-opendkim;	dkim=pass (2048-bit key;
+ unprotected) header.d=ipp-cas-cz.20230601.gappssmtp.com
+ header.i=@ipp-cas-cz.20230601.gappssmtp.com header.a=rsa-sha256
+ header.s=20230601 header.b=1qiM8D54;	dkim-atps=neutral
+Received: by mail-ed1-x535.google.com with SMTP id 4fb4d7f45d1cf-53d9b94731aso5353316a12.1
+        for <kropadan@fjfi.cvut.cz>; Mon, 23 Oct 2023 08:19:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=ipp-cas-cz.20230601.gappssmtp.com; s=20230601; t=1698074378; x=1698679178; darn=fjfi.cvut.cz;
+        h=in-reply-to:from:references:cc:to:content-language:subject
+         :user-agent:mime-version:date:message-id:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=49Cys6BRv2qzXssT2C4feqdPeYyOQ9oOK6Aq8bHesm0=;
+        b=1qiM8D54SGG4DStp+o0RybSht8puD9UAZ0d4RqdmVFS6SQ7zQaANr5+5+keNLZLuMW
+         SMlu06uCTof4kStfDXB7cR6IddMt0bXWMUiOReo3mdbIHibRlj03FUydgxlOKBVyoZGe
+         oaU14sitSHovoxMeqAQI8QWC+o+q3ZMIshflkmqwhXHc4/rOVc+oPnUkYZNmMPhitUZB
+         9DTMNUHJogvJKAuW1nptIElXFr/54H2/sZM5f/A88saPMaEFwDyxZTSC9WNHAPbmuAGK
+         dyoLuwSfWxlSRycpsaNHepzR2lCrPZmUXL4jCL+uSMPXqUdkX6RiLlv3ZciJAFGl+OmS
+         yRxg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1698074378; x=1698679178;
+        h=in-reply-to:from:references:cc:to:content-language:subject
+         :user-agent:mime-version:date:message-id:x-gm-message-state:from:to
+         :cc:subject:date:message-id:reply-to;
+        bh=49Cys6BRv2qzXssT2C4feqdPeYyOQ9oOK6Aq8bHesm0=;
+        b=ng8JJRJQn/ApVHlhJdmgt2n3lax7DNTf01WIDZTVu8wVuQi2tIpjPaZTQazxxCTVoL
+         0+5lnSiAm5/o4rpwDsEnsFxZUwlGXVzQabeGYtlWe2+3r2oGDnuDKnhZ3xXDueI3Ft6d
+         ONr60QuMT81k78a5WZMg7MlowCNzvqDzR9fFf8r/c4/8e9YFGnvEln30Geex09vf7mLI
+         ZS3bdaQx+4Gvjew2gW4oXJh2xoo+OZyKCSVrLUXQBmDfQHWKzFoGh/4CR7Ngqba0RZGd
+         QVYnMymGZ9TwAgCMurbCLXgQhELUQKtl6YmI9Tr7tmYecRECt20q/4lzCwhujN3YdE/N
+         qZXA==
+X-Gm-Message-State: AOJu0YwmSoK21u8hSIWGKNweNeKZY9loRVj2jCOdL/yfeZ1MF8XMgQqX
+	uWCAajBaTp86o5cVeoEVc4ThGA==
+X-Google-Smtp-Source: AGHT+IHLOfz+WyU2QgDIMN0p4Cn0nu9/Xa2M2lK4qqiDTKPoOaBcQfVv6MSXbxBSjFTZBIVahnDsLQ==
+X-Received: by 2002:a17:907:31c5:b0:9c7:59d1:b2cd with SMTP id xf5-20020a17090731c500b009c759d1b2cdmr7393902ejb.38.1698074378324;
+        Mon, 23 Oct 2023 08:19:38 -0700 (PDT)
+Received: from [10.10.37.200] (gw11.ipp.cas.cz. [147.231.37.135])
+        by smtp.gmail.com with ESMTPSA id dx22-20020a170906a85600b00991d54db2acsm6674644ejb.44.2023.10.23.08.19.37
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 23 Oct 2023 08:19:38 -0700 (PDT)
+Content-Type: multipart/alternative;
+	boundary="------------jkeyeNuzybyYfUF0HCeJWWgD"
+Message-ID: <b939e970-8979-4ab2-8b21-6fca46cd04d3@ipp.cas.cz>
+Date: Mon, 23 Oct 2023 17:19:38 +0200
+User-Agent: Mozilla Thunderbird
+Subject: =?UTF-8?B?UmU6IE3Em8WZZW7DrSBtYWduZXRpY2vDvWNoIHBvbMOtIG5hIHRva2Ft?=
+ =?UTF-8?Q?aku_GOLEM?=
+Content-Language: sk-SK
+To: Tomas Markovic <markovic@ipp.cas.cz>,
+ "Kropackova, Daniela" <kropadan@fjfi.cvut.cz>
+Cc: =?UTF-8?Q?Vojt=C4=9Bch_Svoboda?= <vojtech.svoboda@fjfi.cvut.cz>
+References: <DU2PR06MB8398092215217C59CFCF724AF8D8A@DU2PR06MB8398.eurprd06.prod.outlook.com>
+ <CAF4UnYoCivwgsGoCiKqgmibrbmGuBtnhAd45FtAokH8iorq-Tg@mail.gmail.com>
+From: Ivan Duran <duran@ipp.cas.cz>
+In-Reply-To: <CAF4UnYoCivwgsGoCiKqgmibrbmGuBtnhAd45FtAokH8iorq-Tg@mail.gmail.com>
+X-spamd-bar-in: ---
+X-CVUT-GW-Info: 1;rspamd_ham;spf_na;dkim_allow;dmarc_na
+Return-Path: duran@ipp.cas.cz
+X-MS-Exchange-Organization-ExpirationStartTime: 23 Oct 2023 15:19:41.4695
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 15f3c979-d6b7-4148-49f7-08dbd3db7ace
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Organization-MessageDirectionality: Originating
+X-MS-Exchange-SkipListedInternetSender: ip=[2a00:1450:4864:20::535];domain=mail-ed1-x535.google.com
+X-MS-Exchange-ExternalOriginalInternetSender: ip=[2a00:1450:4864:20::535];domain=mail-ed1-x535.google.com
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU6PEPF00009524:EE_|AM8PR06MB6849:EE_|DU2PR06MB8398:EE_
+X-MS-Exchange-Organization-AuthSource: DU6PEPF00009524.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-OriginatorOrg: campuscvut.onmicrosoft.com
+X-MS-Office365-Filtering-Correlation-Id: 15f3c979-d6b7-4148-49f7-08dbd3db7ace
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report: CIP:147.32.235.93;CTRY:;LANG:cs;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-ed1-x535.google.com;PTR:mail-ed1-x535.google.com;CAT:NONE;SFS:(13230031)(4636009)(230922051799003)(451199024)(82310400011)(31686004)(66899024)(166002)(30864003)(36756003)(86362001)(31696002)(224303003)(5660300002)(8936002)(4326008)(1096003)(2616005)(956004)(7696005)(33964004)(26005)(110136005)(7636003)(7596003)(22186003)(966005)(58800400005)(336012)(43740500002);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Oct 2023 15:19:41.3601
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 15f3c979-d6b7-4148-49f7-08dbd3db7ace
+X-MS-Exchange-CrossTenant-Id: f345c406-5268-43b0-b19f-5862fa6833f8
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f345c406-5268-43b0-b19f-5862fa6833f8;Ip=[147.32.235.93];Helo=[mailgw3.cvut.cz]
+X-MS-Exchange-CrossTenant-AuthSource: DU6PEPF00009524.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8PR06MB6849
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.6716054
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.6907.028
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?R2poZmxwdW5JTVRNS1BGRzBtOEc5WlRELytMTnBvMkYyV1JjZ3VMbWVGSEpt?=
+ =?utf-8?B?a1R1TjJzK0xFSmYxTjUvTU42MlJwcWFmcWlEM3pBeSsvS1FnVHNzbFVNcTlN?=
+ =?utf-8?B?Smg4MXpCL0h4dzFTUStJb1NwOUlrTWl6RlZ0OFIyYk9zZnhJV2dhb2NRZXky?=
+ =?utf-8?B?N3JRMWdaRXhzWVg0RFMrK0ZhdU4vck9JaUlTOEVRRmtIUzQ0OFdFdmp1MXdZ?=
+ =?utf-8?B?RlVDejcrbmNoSTJmcjBrMkRjYWpNdDJCR25lbVBiS3hzYjhwbWUvNUVJandJ?=
+ =?utf-8?B?RlhQa1JnK0xweXFkb21MaDlBRGRpcTFKUmdUbnUwcDNJdGIwUmt5Wm1VYUQy?=
+ =?utf-8?B?b3dHa2xaUWVHS2VHU0JQQVVBbTBRRHdhdjVrQmpUTU9GVS9lckZ4OFZndzNQ?=
+ =?utf-8?B?U0JYeGZFUFJmaUphYnlxV3NvV3E1NTlFY1VCRU9XSVkyYWczSmdPSjZGWm9S?=
+ =?utf-8?B?bU1qemFTQTNsMFRmWFNHTVc0aXBiV25yVjZyVjRyWFY4R0dxRWRHWlpvSi9h?=
+ =?utf-8?B?bmpIM2syYjBQOExLUzFPcTQvMEJ1NHVFQWp6Y3o4NWJTQXZzaWQxL3YyclNM?=
+ =?utf-8?B?WThQb0tKN3ZKMW4vdzdOZ3JLcWZ6anpjZU5INVd6dGZzc25WVE42MHRpM1A0?=
+ =?utf-8?B?Y21ycFZmWXNMV1QwZHpYYnlFQ25PVVlid1JQOUtySnNQYTBWTmlOd2VjUUtL?=
+ =?utf-8?B?Q0NMNzgwS1BTNWI2WXJVZXBiMlBQaFcxWmozSXpFenpwVTQ0eVdFVE9zMnJR?=
+ =?utf-8?B?Vlh1Z25GVWg0d1RQbCtzNW1XYzlqRmd1Q2ZMNjRvSXlObGx1V3ViclM3RkZE?=
+ =?utf-8?B?bVF1ZmVtOEZUdDNqNzJkVldzdW1YUHpwUUZxc2hidXpQd0NERHgxaUMwSFB1?=
+ =?utf-8?B?R3ZtSm01YlNiOXN0d1lzbzBrTmE4MWVTM1B3SldYcllUeW5tQXRxZXBKQ2Rp?=
+ =?utf-8?B?TElUWWtUSEJjd2tQaDFkZElFTjZOV29yN0R5ejZ2Y1V2dE55VkdQc1lETzdQ?=
+ =?utf-8?B?aXJWTm51ekY2L041MUNIREhIZktadWNXYXZEQm9kWXF4NGNmV25GMjRrVUYr?=
+ =?utf-8?B?KzJYL2dmYTFGYjFtck9FN3NITzlmclVVWElNQlpRNk0rMHJaT3NMbTdPNVRN?=
+ =?utf-8?B?QlhUdXlnZDZ5VHlDTlJpQVA1SEJjMXpXaGNib05mcUhjSFhwS2JybDRZU1VL?=
+ =?utf-8?B?ZHpNWlp2WUNaWEcxSmYzSTlsWloyUUZ2THBtWTZ6S1Znb01tYlFaTVpodEVq?=
+ =?utf-8?B?TVpETm1xUXhPb1V1ZFR1T3BTZ2srb2pieVdvQ3hhNmVpVlhZeC9GYlZ0NnZt?=
+ =?utf-8?B?MHpmOVVGcmVIcTEyamRXa3hVSXByTURNKzhONGxqWFZNbDZ1Q1JWSnB4cE1H?=
+ =?utf-8?B?WkpqSHBubDljUVc4b09neW5BdG1SajRvbmpHcm1IOFMxd3RjTERhWVlqQUgz?=
+ =?utf-8?B?d0Faak1tUUwvMWxuaDQ5VTlRNHBZdkxmeWVkOHdmcFNCaGJMZnVTZ082aGU4?=
+ =?utf-8?B?TFBNQ3FEb1Ird2VINmpaTElPMlVxb2Z4UENUeEtXMHB0VTVvc2tRZktOWERn?=
+ =?utf-8?B?NEVDSFZkK29LQlRHZEtOMGNVL2tkYUc4cU1XbllHUHZzMjJaN3k5eFBXK0wy?=
+ =?utf-8?B?NFFHMkY5NTlKTlRpUjJJaEk3cmV6a3dQLys0aW1CbXFqSjVzUS9CM0M1aGll?=
+ =?utf-8?B?VzlFTy9GL2QxS3ZWTFRMSTNZVFk5OFlNenBOQXEzV2Jwclp5UzUvSTVYWXVm?=
+ =?utf-8?B?U1hnajR2clZWUWtaQlhJOFB4RG54c2szaWU1S3lOdDdLcGdVcjBUZzArN05L?=
+ =?utf-8?B?aGZ5dU5MMldtRkh2enNMOGlGMmt2ZmJ3QmYwMVgrT2RpSDk0QzZ5YTgvU2Np?=
+ =?utf-8?B?U3VXNUJVTk1JdzNWVkZwa2FTOHR3NC9sMkRaY2RoRE43S1dIc1JCY0U0SW5I?=
+ =?utf-8?B?bzJWL3MycXUvK3hHMGpxb24zL0ppNFVDWU1iV3V0Q1hPZEMrOFhid1g4dldw?=
+ =?utf-8?B?anlrVkNqS3IzRW1HckRRbkNBRkhUVDFhVXVjUkt3ZUVobjhYRlhNY09sTmZG?=
+ =?utf-8?B?Tmhnd2JhZjdtR3NteWVDTWtueVUzR3BSTGtNRlUxU3pydWVvTnhCdWhBc2la?=
+ =?utf-8?Q?97agm3ZQ7cC9uvzK98QgMXlyV?=
+MIME-Version: 1.0
+
+--------------jkeyeNuzybyYfUF0HCeJWWgD
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Dobry den /Ahoj,
+
+len rychla reakcia k dvom veciam:
+
+1. ak si dobre spominam, instalacia flux loopu na HFS bola "svatym 
+gralom"  riadenia polohy na CASTORe (povodny flux loop na HFS "zhorel"), 
+ale nikdy k instalacii nedoslo, kvoli technickej obtiaznosti instalovat 
+nieco na HFS pod "kozuchom". Neviem, mozno su uz veci na GOLEMe teraz 
+inak a nejaky pristup tam mozny je ...
+
+2. 3D MSL sondu mam. Jak uz to tak byva, pred par tyzdnami, co nam x 
+rokov stala na manipulatore v labe, sme ju rozobrali a uskladnili v 
+ramci upratovania labu pred navstevou z ITERu ... Nie je to ale zasadny 
+problem. Je mozne ju znovu sprevadzkovat, akurat s tym budu asi spojene 
+mierne "porodne bolesti". Frekvencnu odpoved si teraz z hlavy 
+nevybavujem, ale v rychlom mode je myslim sonda pre Vas experiment v 
+prvom priblizeni pouzitelna. Zasadnou vyhodou sondy je fakt, ze mate 
+"istotu" ze magnetickemu polu ktore meria sa vcelku da verit. Pri merani 
+cievkami je absolutna hodnota vzdy viac ci menej otazna ...
+
+S pozdravom,
+
+Ivan Ďuran
+
+Dne 23.10.2023 v 15:20 Tomas Markovic napsal(a):
+> Dobry den,
+>
+> preposilam i kolegu Svobodovi, nakolik diskuze obsahuje i vysvetleni 
+> jisteho netrivialniho chovani GOLEMu.
+>
+> Interpretace mereni "vakuovych" poli na GOLEMu (a CASTORu) byla vzdy 
+> trochu problematicka. Treba historicky, B_R pole z civek bylo 
+> nekdy mereno jako 2x silnejsi nez by davalo smysl dle generujicich 
+> proudu - predevsim kdyz bylo generovano z "kvadrupolu" kolem 
+> centralniho sloupku trafa. Ve stare prezentaci prilozene k 
+> mailu dokazuji ze pricinou byla pritomnost ferromagnetickeho jadra v 
+> blizkosti PF civek. Vic detailu je uvedeno v clanku: 
+> https://www.sciencedirect.com/science/article/pii/S0920379613002573 V 
+> dalsim clanku 
+> https://www.sciencedirect.com/science/article/pii/S0920379615002100 
+> pak diskutuji jak se 3D geometrie zelezneho jadra GOLEMa projevovala 
+> na magnetickych polich i mimo komoru.
+>
+> Zkratka, to ze GOLEM ma zelezne jadro dela z jednoduche linearni 
+> problematiky identifikace magnetickych poli ve vyboji bez plazmatu 
+> ulohu dynamickou a nelinearni, jelikoz mnoho poli bude zaviset od 
+> stupne nasyceni jadra, ktere zavisi na tom kolik magnetickeho toku uz 
+> proslo jeho centralni casti. Kdyz se toto nevezme v potaz, muze se 
+> clovek na ukolu ktery navrhujete lehce spalit, kdyz data merena data 
+> nebudou najednou "davat smysl". Prvnim krokem by asi tudiz bylo urcit 
+> v jake casti hysterezni krivky se nachazi centralni cast trafa GOLEMu 
+> behem typickeho vyboje - zda je mozne predpokladat to "nejhorsi" a 
+> ferromagnet je plne nenasyceny. Aplikovat tuto informaci pak dal, na 
+> mereni poli ve "vakuu" ale bohuzel neni trivialni...
+>
+> Pricina proc plasma GOLEMu driftuje na HFS (nebo alespon neutika k LFS 
+> tolik jako na novejsich tokamacich) je opet kvuli pritomnosti 
+> zelezneho jadra na HFS. Detaily jsou popsany v referenci [2] v 
+> prilozene prezentaci, ale je obecne znamo (i kdyz mozna v teto dobe uz 
+> ne) ze vlozenim ferromagnetike tyce do centralniho sloupku tokamaku 
+> dojde k stabilizaci LFS expanze sloupce plazmatu. Vedlejsim efektem 
+> pak je ze plazma je mene stabilni vuci vertikalnimu pohybu - jak 
+> nejspis vidime na GOLEMu. Proc ale na GOLEMu plazma driftuje 
+> preferovane nahoru a ne treba dolu to nevim - nejspis nejake 
+> zbytkove pole nekde. Vertikalni pohyb se da ale hezky detekovat 
+> instalaci 2 flux loopu kolem HFS midplane (ale ne primo na midplane). 
+> Pro centrolvane plazma ve stredu komory by byl rozdil jejich signalu 
+> =0, ale pri sebemensim vertikalnim pohybu magnituda tohoto signalu 
+> vystreli nahoru. Rekl bych ze instalace tohoto systemu a sledovani 
+> vertikalniho pohybu plazmatu timto stylem by byl hezky ukol na 
+> praktika. Spolecne s Instalaci sedlovych civek kolem LFS a sledovani 
+> n=1 asymetrii magnetickeho pole.
+>
+> Jinak, bylo by dobre zmerit velikost rozptyloveho pole u kazde civky 
+> "ohmickeho ohrevu". Ujistit se ze neni nekde civka se spatnou 
+> indukcnosti vuci zeleznemu jadru kde by pole "unikalo" - v idealnim 
+> pripade by byl vsechen magneticky tok techto civek "uveznen" v trafu. 
+> Taky by bylo dobre se presvedcit ze behem experimentu eventualne casem 
+> nedojde k lokalnimu nasyceni jadra pod temito civkami, co by se 
+> projevilo rustem rozptyloveho pole.
+>
+> Na toroidalni pole se moc nesoustredujte, je vice mene trivialni - ve 
+> vakuovem vystrelu se jedna ciste o Amperuv zakon. Kdyz znate proud v 
+> TF civkach, znate i pole. Jak ukazuji ve sve diplomce, efekty 
+> zakriveni TF civek jsou vice mene zanedbatelne. Co neni plne 
+> zanedbatelne, je ze u nejvetsich pristupovych portu se museli 
+> instalovat civky TF pole dale od sebe aby se tam ty porty vesli - co 
+> se pak projevi na mirne modulaci TF pole v toroidalnim smeru kolem 
+> tokamaku.
+>
+> Experiment bude, jak pisete, pouze dynamicky a dynamika bude dana 
+> vlastnostmi RLC obvodu - kapacitou transformatorova baterie + a 
+> indukcnostmi civek generace pole ktere pouzijete - step response moc 
+> necekejte. Take necekejte moc izolaci studia jednotlivych obvodu - 
+> vsechny jsou indukcne vazany k sobe. Pustite proud do civek ohmickeho 
+> ohrevu, to bude indukovat proudy v komore, ty vygeneruji 
+> poloidalni pole v jejim okoli, ktere mozna zachyti vas senzor v 
+> blizkosti civky ohmickeho ohrevu merici rozptylove pole... Mit sadu 
+> mereni na ruznych mistech a z naproudeni ruznych civek se ale hodi 
+> treba k pozdejsimu testovani indukcniho modelu tokamaku ve 
+> kterem popisete vsechny toroidalne vodive struktury formou indukcne 
+> vazanych obvodu. Bohuzel v pripade GOLEMa by tento model musel 
+> obsahovat i zelezne jadro... Jak to ale udelat mam nadruhou stranu 
+> vysvetleno v clancich.
+>
+> Co se tyce experimentalniho provedeni mereni lokalnich magnetickych 
+> poli, silne doporucuji pouzit tzv MSL Hallovu sondu kolegy Durana 
+> (pridavam do seznamu recipientu mailu) se kterou jsme to vse merili - 
+> viz .doc priloha. Jenom kolega Duran ale bude vedet kde sonda je ted a 
+> kde je jeji nastavitelny manipulator.
+>
+> S pozdravem,
+> Tomas Markovic
+>
+> po 23. 10. 2023 v 9:58 odesílatel Kropackova, Daniela 
+> <kropadan@fjfi.cvut.cz> napsal:
+>
+>     Dobrý den,
+>     na GOLEMu letos plánuji dělat PRPL, které by se týkalo proměřování
+>     magnetických polí. Hlavní motivací k tomu je zjistit možné příčiny
+>     pohybu plazmatu (vertikálně nahoru, radiálně k HFS) a to zda vůbec
+>     jsme schopni s aktuální konfigurací stabilizace (proud, počet
+>     závitů,..) něco s polohou plazmatu udělat. Jednou z věcí, kterou
+>     bych také chtěla objasnit je vliv měděného kožuchu, tj. jak jeho
+>     přítomnost může zbrzdit průnik mag. pole od vnějších
+>     stabilizačních cívek do komory.
+>     Experimentálně bych chtěla proměřit v podstatě všechna mag. pole
+>     co půjdou, tedy  tor. mag. pole, rozptylové mag. pole od komory
+>     (+kožuchu), mag. pole od vnějších stabilizačních cívek, vnitřního
+>     kvadrupólu,... To vše pro různé orientace a hlavně co bych ráda,
+>     tak to naměřit dynamicky, tedy pustit vždy do cívek nějaký signál
+>     (něco jako step response)  a měřit časový průběh mag. pole v
+>     komoře. Za tímto účelem jsem chtěla pro měření radiální a
+>     toroidální složky mag. pole využít Mirnovovu cívku, kterou bych v
+>     příslušné orientaci umístila na mechanický manipulátor (obvykle
+>     využíván pro elstat. sondy) a vložila do komory a pro vertikální
+>     pole pak sedlovou cívku nebo vnitřní kvadrupól + případně 4
+>     Mirnovovy cívky, které běžně slouží k měření polohy.
+>      Abych se dostala k tomu proč Vám píši, tak Vojta Svoboda mi
+>     říkal, že:
+>           1. jste kdysi něco podobného dělal, ale s Hallovou sondou a
+>     zda by se to tak taky nedalo udělat? Mít možnost to změřit pro
+>     všechny složky pole naráz a navíc bez nutnosti signál integrovat
+>     by bylo skvělé, já ale nevím, kde a jestli vůbec je tato sonda k
+>     dispozici, případně zda by se dala zapůjčit, no a pak taky jak je
+>     to např. s jejím časovým rozlišením...
+>           2. prý tu plánujete dělat nějaká mag. měření za účelem
+>     zkoumání mag. ostrovů a chtěli byste nainstalovat flux loop na HFS
+>     a LFS + Sedlové cívky. Zejména flux loops zní poměrně lákavě, a
+>     proto bych se chtěla zeptat kam přesně máte v plánu flux loops a
+>     sedlové cívky nainstalovat a co s nimi měřit?
+>
+>     Vím, že jste něco podobného dělal ve své diplomové práci, a tak
+>     budu ráda i za jakýkoliv komentář, radu...
+>
+>     Předem děkuji.
+>
+>     S pozdravem,
+>     Daniela Kropáčková
+>
+-- 
+************************************************************************
+Ing. Ivan Duran, Ph.D.                     Tel.:  +420 2 6605 2533
+Institute of Plasma Physics AS CR, v.v.i.  Fax.:  +420 2 8689 0448
+Za Slovankou 1782/3                        Email:duran@ipp.cas.cz    
+182 00 Praha 8                             WWW:http://www.ipp.cas.cz/
+Czech Republic
+
+--------------jkeyeNuzybyYfUF0HCeJWWgD
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+    <p>Dobry den /Ahoj,</p>
+    <p>len rychla reakcia k dvom veciam:</p>
+    <p>1. ak si dobre spominam, instalacia flux loopu na HFS bola
+      &quot;svatym gralom&quot;&nbsp; riadenia polohy na CASTORe (povodny flux loop na
+      HFS &quot;zhorel&quot;), ale nikdy k instalacii nedoslo, kvoli technickej
+      obtiaznosti instalovat nieco na HFS pod &quot;kozuchom&quot;. Neviem, mozno
+      su uz veci na GOLEMe teraz inak a nejaky pristup tam mozny je ...</p>
+    <p>2. 3D MSL sondu mam. Jak uz to tak byva, pred par tyzdnami, co
+      nam x rokov stala na manipulatore v labe, sme ju rozobrali a
+      uskladnili v ramci upratovania labu pred navstevou z ITERu ... Nie
+      je to ale zasadny problem. Je mozne ju znovu sprevadzkovat, akurat
+      s tym budu asi spojene mierne &quot;porodne bolesti&quot;. Frekvencnu
+      odpoved si teraz z hlavy nevybavujem, ale v rychlom mode je myslim
+      sonda pre Vas experiment v prvom priblizeni pouzitelna. Zasadnou
+      vyhodou sondy je fakt, ze mate &quot;istotu&quot; ze magnetickemu polu ktore
+      meria sa vcelku da verit. Pri merani cievkami je absolutna hodnota
+      vzdy viac ci menej otazna ...</p>
+    <p>S pozdravom,</p>
+    <p>Ivan Ďuran<br>
+    </p>
+    <div class="moz-cite-prefix">Dne 23.10.2023 v 15:20 Tomas Markovic
+      napsal(a):<br>
+    </div>
+    <blockquote type="cite" cite="mid:CAF4UnYoCivwgsGoCiKqgmibrbmGuBtnhAd45FtAokH8iorq-Tg@mail.gmail.com">
+      
+      <div dir="ltr">Dobry den,
+        <div><br>
+        </div>
+        <div>preposilam i kolegu Svobodovi, nakolik diskuze obsahuje i
+          vysvetleni jisteho&nbsp;netrivialniho chovani GOLEMu.</div>
+        <div><br>
+        </div>
+        <div>Interpretace mereni &quot;vakuovych&quot; poli na GOLEMu (a CASTORu)
+          byla vzdy trochu problematicka. Treba historicky, B_R pole z
+          civek bylo nekdy&nbsp;mereno&nbsp;jako 2x silnejsi nez by davalo&nbsp;smysl
+          dle generujicich proudu&nbsp;- predevsim kdyz bylo generovano&nbsp;z
+          &quot;kvadrupolu&quot; kolem centralniho sloupku trafa. Ve
+          stare&nbsp;prezentaci prilozene&nbsp;k mailu&nbsp;dokazuji ze pricinou byla
+          pritomnost ferromagnetickeho&nbsp;jadra v blizkosti PF civek. Vic
+          detailu je uvedeno v clanku:&nbsp;<a href="https://www.sciencedirect.com/science/article/pii/S0920379613002573" moz-do-not-send="true" class="moz-txt-link-freetext">https://www.sciencedirect.com/science/article/pii/S0920379613002573</a>&nbsp;
+          V dalsim clanku <a href="https://www.sciencedirect.com/science/article/pii/S0920379615002100" moz-do-not-send="true" class="moz-txt-link-freetext">https://www.sciencedirect.com/science/article/pii/S0920379615002100</a>
+          pak diskutuji jak se 3D geometrie zelezneho jadra GOLEMa
+          projevovala na magnetickych polich i mimo komoru.</div>
+        <div><br>
+        </div>
+        <div>Zkratka, to ze GOLEM ma zelezne jadro dela z jednoduche
+          linearni problematiky identifikace magnetickych poli ve vyboji
+          bez plazmatu ulohu dynamickou a nelinearni, jelikoz mnoho poli
+          bude zaviset od stupne nasyceni&nbsp;jadra,&nbsp;ktere&nbsp;zavisi na tom
+          kolik magnetickeho toku uz proslo jeho centralni casti. Kdyz
+          se toto nevezme v potaz, muze se clovek na ukolu ktery
+          navrhujete lehce spalit, kdyz&nbsp;data merena data nebudou
+          najednou &quot;davat smysl&quot;. Prvnim krokem by asi tudiz bylo urcit
+          v jake casti hysterezni krivky se nachazi&nbsp;centralni cast trafa
+          GOLEMu behem typickeho vyboje - zda je mozne predpokladat to
+          &quot;nejhorsi&quot; a ferromagnet je plne nenasyceny. Aplikovat tuto
+          informaci pak dal, na mereni poli ve &quot;vakuu&quot; ale bohuzel neni
+          trivialni...</div>
+        <div><br>
+        </div>
+        <div>Pricina proc plasma GOLEMu driftuje na HFS (nebo alespon
+          neutika k LFS tolik jako na novejsich tokamacich) je opet
+          kvuli pritomnosti zelezneho jadra na HFS. Detaily jsou popsany
+          v referenci [2] v prilozene&nbsp;prezentaci, ale je obecne znamo (i
+          kdyz mozna v teto dobe uz ne) ze vlozenim ferromagnetike&nbsp;tyce
+          do centralniho sloupku tokamaku dojde k stabilizaci LFS
+          expanze sloupce plazmatu. Vedlejsim efektem pak je ze plazma
+          je mene stabilni&nbsp;vuci vertikalnimu&nbsp;pohybu - jak nejspis vidime
+          na GOLEMu. Proc ale na GOLEMu plazma driftuje preferovane
+          nahoru a ne treba dolu to nevim - nejspis nejake zbytkove&nbsp;pole
+          nekde.&nbsp;Vertikalni pohyb se da ale hezky detekovat instalaci 2
+          flux loopu kolem HFS midplane (ale ne primo na midplane). Pro
+          centrolvane plazma ve stredu&nbsp;komory&nbsp;by byl rozdil jejich
+          signalu =0, ale pri sebemensim vertikalnim pohybu magnituda
+          tohoto signalu vystreli nahoru. Rekl bych ze instalace tohoto
+          systemu a sledovani vertikalniho pohybu plazmatu timto stylem
+          by byl hezky ukol na praktika. Spolecne s Instalaci sedlovych
+          civek kolem LFS a sledovani n=1 asymetrii magnetickeho pole.</div>
+        <div><br>
+        </div>
+        <div>Jinak, bylo by dobre zmerit velikost rozptyloveho&nbsp;pole u
+          kazde civky &quot;ohmickeho ohrevu&quot;. Ujistit se ze neni nekde civka
+          se spatnou indukcnosti vuci zeleznemu&nbsp;jadru kde by pole
+          &quot;unikalo&quot; - v idealnim pripade by byl vsechen magneticky tok
+          techto civek &quot;uveznen&quot; v trafu. Taky by bylo dobre se
+          presvedcit&nbsp;ze behem experimentu eventualne casem nedojde k
+          lokalnimu nasyceni&nbsp;jadra pod temito civkami, co by se
+          projevilo rustem rozptyloveho&nbsp;pole.</div>
+        <div><br>
+        </div>
+        <div>Na toroidalni pole se moc nesoustredujte, je vice
+          mene&nbsp;trivialni - ve vakuovem&nbsp;vystrelu se jedna ciste o Amperuv
+          zakon. Kdyz znate&nbsp;proud v TF civkach, znate i pole. Jak
+          ukazuji&nbsp;ve sve diplomce, efekty zakriveni TF civek jsou vice
+          mene zanedbatelne. Co neni&nbsp;plne zanedbatelne, je ze u
+          nejvetsich pristupovych portu se museli instalovat civky TF
+          pole dale od sebe aby se tam ty porty vesli - co se pak
+          projevi na mirne modulaci TF pole v toroidalnim smeru kolem
+          tokamaku.</div>
+        <div><br>
+        </div>
+        <div>Experiment bude, jak pisete, pouze dynamicky a dynamika
+          bude dana vlastnostmi RLC obvodu - kapacitou transformatorova
+          baterie + a indukcnostmi&nbsp;civek generace pole ktere pouzijete -
+          step response moc necekejte. Take necekejte moc izolaci studia
+          jednotlivych obvodu - vsechny jsou indukcne vazany k sobe.
+          Pustite proud do civek ohmickeho ohrevu, to bude indukovat
+          proudy v komore, ty vygeneruji poloidalni&nbsp;pole v jejim okoli,
+          ktere mozna zachyti vas senzor v blizkosti&nbsp;civky ohmickeho
+          ohrevu merici rozptylove pole... Mit sadu mereni na ruznych
+          mistech a z naproudeni&nbsp;ruznych civek se ale hodi treba k
+          pozdejsimu testovani indukcniho modelu tokamaku ve
+          kterem&nbsp;popisete vsechny toroidalne vodive struktury formou
+          indukcne vazanych obvodu. Bohuzel v pripade GOLEMa by tento
+          model musel obsahovat i zelezne jadro... Jak to ale udelat&nbsp;mam
+          nadruhou stranu vysvetleno v clancich.</div>
+        <div><br>
+        </div>
+        <div>Co se tyce experimentalniho provedeni mereni lokalnich
+          magnetickych poli, silne doporucuji pouzit tzv MSL Hallovu
+          sondu kolegy Durana (pridavam do seznamu recipientu mailu) se
+          kterou jsme to vse merili - viz .doc priloha. Jenom kolega
+          Duran ale bude vedet kde sonda je ted&nbsp;a kde je jeji
+          nastavitelny manipulator.</div>
+        <div><br>
+        </div>
+        <div>S pozdravem,</div>
+        <div>Tomas Markovic</div>
+        <br>
+        <div class="gmail_quote">
+          <div dir="ltr" class="gmail_attr">po 23. 10. 2023 v&nbsp;9:58
+            odesílatel Kropackova, Daniela &lt;<a href="mailto:kropadan@fjfi.cvut.cz" target="_blank" moz-do-not-send="true" class="moz-txt-link-freetext">kropadan@fjfi.cvut.cz</a>&gt;
+            napsal:<br>
+          </div>
+          <blockquote class="gmail_quote" style="margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+            <div>
+              <div dir="ltr">
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  Dobrý den,</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  na GOLEMu letos plánuji dělat PRPL, které by se týkalo
+                  proměřování magnetických polí. Hlavní motivací k tomu
+                  je zjistit možné příčiny pohybu plazmatu (vertikálně
+                  nahoru, radiálně k HFS) a to zda vůbec jsme schopni s
+                  aktuální konfigurací stabilizace (proud, počet
+                  závitů,..) něco s polohou plazmatu udělat. Jednou z
+                  věcí, kterou bych také chtěla objasnit je vliv
+                  měděného kožuchu, tj. jak jeho přítomnost může zbrzdit
+                  průnik mag. pole od vnějších stabilizačních cívek do
+                  komory.&nbsp;&nbsp;</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  Experimentálně bych chtěla proměřit v podstatě všechna
+                  mag. pole co půjdou, tedy&nbsp; tor. mag. pole, rozptylové
+                  mag. pole od komory (+kožuchu), mag. pole od vnějších
+                  stabilizačních cívek, vnitřního kvadrupólu,... To vše
+                  pro různé orientace a hlavně co bych ráda, tak to
+                  naměřit dynamicky, tedy pustit vždy do cívek nějaký
+                  signál (něco jako step response)&nbsp; a měřit časový
+                  průběh mag. pole v komoře. Za tímto účelem jsem chtěla
+                  pro měření radiální a toroidální složky mag. pole
+                  využít Mirnovovu cívku, kterou bych v příslušné
+                  orientaci umístila na mechanický manipulátor (obvykle
+                  využíván pro elstat. sondy) a vložila do komory a pro
+                  vertikální pole pak sedlovou cívku nebo vnitřní
+                  kvadrupól + případně 4 Mirnovovy cívky, které běžně
+                  slouží k měření polohy.</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  &nbsp;Abych se dostala k tomu proč Vám píši, tak Vojta
+                  Svoboda mi říkal, že:<br>
+                        1. jste kdysi něco podobného dělal, ale s
+                  Hallovou sondou a zda by se to tak taky nedalo udělat?
+                  Mít možnost to změřit pro všechny složky pole naráz a
+                  navíc bez nutnosti signál integrovat by bylo skvělé,
+                  já ale nevím, kde a jestli vůbec je tato sonda k
+                  dispozici, případně zda by se dala zapůjčit, no a pak
+                  taky jak je to např. s jejím časovým rozlišením...</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                        2. prý tu plánujete dělat nějaká mag. měření za
+                  účelem zkoumání mag. ostrovů a chtěli byste
+                  nainstalovat flux loop na HFS a LFS + Sedlové cívky.
+                  Zejména flux loops zní poměrně lákavě, a proto bych se
+                  chtěla zeptat kam přesně máte v plánu flux loops a
+                  sedlové cívky nainstalovat a co s nimi měřit?&nbsp;</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  <br>
+                </div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  Vím, že jste něco podobného dělal ve své diplomové
+                  práci, a tak budu ráda i za jakýkoliv komentář,
+                  radu...</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  <br>
+                </div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  Předem děkuji.</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  <br>
+                </div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  S pozdravem,</div>
+                <div style="font-family:Aptos,Aptos_EmbeddedFont,Aptos_MSFontService,Calibri,Helvetica,sans-serif;font-size:12pt;color:rgb(0,0,0)">
+                  Daniela Kropáčková</div>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </blockquote>
+    <pre class="moz-signature" cols="72">-- 
+************************************************************************
+Ing. Ivan Duran, Ph.D.                     Tel.:  +420 2 6605 2533
+Institute of Plasma Physics AS CR, v.v.i.  Fax.:  +420 2 8689 0448
+Za Slovankou 1782/3                        Email: <a class="moz-txt-link-abbreviated" href="mailto:duran@ipp.cas.cz">duran@ipp.cas.cz</a>   
+182 00 Praha 8                             WWW:   <a class="moz-txt-link-freetext" href="http://www.ipp.cas.cz/">http://www.ipp.cas.cz/</a>
+Czech Republic </pre>
+  </body>
+</html>
+
+--------------jkeyeNuzybyYfUF0HCeJWWgD--

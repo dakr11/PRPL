@@ -45,3 +45,13 @@
 
 ## Kroky
 - [ ] Spočítat magnetické pole od cívek pro síťku s přesahem k jádru, numericky i analyticky (eliptické integrály)
+
+
+
+## K cemu to vlastne vsechno muze byt:
+- Breakdown - lze pak treba optimalizovat se stabilizaci, aby doslo k chtenemu prurazu pri co mozna nejnizsi ztrate volt-sekund
+- kalibrace "rychle" mag. diagnostiky = MC
+- konstanta kozuchu
+- indukcni model
+
+
