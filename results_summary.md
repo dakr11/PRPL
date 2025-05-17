@@ -15,3 +15,12 @@
   <br/>
   <em>Figure 1: Field Orientation</em>
 </p>
+
+
+
+
+<p align="center">
+  <img src="Figs/draw/Bt_return_current_conductor_white.png" width="380"/> 
+  <br/>
+  <em>Figure 2: Return current conductor </em>
+</p>

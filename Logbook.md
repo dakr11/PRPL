@@ -2,7 +2,7 @@
 V následujícím jsou shrnuty všemožné postřehy, reporty a obecně vývoj celého tohoto projektu PRPL.
 
 <p align="center">
-  <img src="Figs/draw/roadmap_introPres_PRPLA.svg" width="455"/> 
+  <img src="Figs/draw/roadmap_PRPLA_white.png" width="455"/> 
   <br/>
   <em></em>
 </p>
@@ -68,12 +68,12 @@ Nový pocitac v kombinaci s redukcí (RS232 na HDMI) ATEN (+ nainstalovani prisl
 <div style="text-align: center;">
   <div style="display: inline-flex; gap: 20px;">
     <div>
-      <img src="Figs/photos/probe_prep_crop.jpg" alt="Figure 1" width="450">
-      <p style="text-align: center;"><em>Figure 1: Sestavení sondy tGOLEM</em></p>
+      <img src="Figs/photos/session02/probe_prep_crop.jpg" alt="Figure 3" width="450">
+      <p style="text-align: center;"><em>Figure 3: Sestavení sondy tGOLEM</em></p>
     </div>
     <div>
-      <img src="Figs/photos/session02_probe_in_chamber.jpg" alt="Figure 2" width="300">
-      <p style="text-align: center;"><em>Figure 2: </em></p>
+      <img src="Figs/photos/session02/session02_probe_in_chamber.jpg" alt="Figure 4" width="300">
+      <p style="text-align: center;"><em>Figure 4: </em></p>
     </div>
   </div>
 </div>

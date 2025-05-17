@@ -97,7 +97,6 @@ As mentioned earlier, the discharge duration is influenced by various factors an
 - [introductory presentation](presentation/PRPL_uvodni_prezentace.pdf)
 - [middle presentation](presentation/PRPLA_introductory_presentation.pdf)
 - [first session 26.4.2024](experiments/2024_04_26/GOLEM_MSL_24_04_26.pdf)
-- [magnetic field (naive) calculation](magnetic_field_models.md)
 
 ### Results Summary
 - see [Summary and Outlook](results_summary.md)
