@@ -3,7 +3,7 @@
 V následujícím jsou shrnuty všemožné postřehy, reporty a obecně vývoj celého tohoto projektu PRPL.
 
 <div align="center">
-  <img src="Figs/draw/roadmap_PRPLA_white.png" width="455"/><br/>
+  <img src="Figs/draw/roadmap_PRPLA_white.png" width="650"/><br/>
   <em></em>
 </div>
 
