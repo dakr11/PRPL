@@ -80,7 +80,7 @@ Another important note from the paper:
 
 ### Data Processing
 - [python scripts - magnetic field measurement](python/)
-- [maltab scritps - magnetic field calculation](matlab/)
+- [matlab scritps - magnetic field calculation](matlab/)
 
 
 
@@ -91,7 +91,7 @@ diagnostics used with relevant links
 - [GOLEM wiki page devoted to Mirnov Coils](http://golem.fjfi.cvut.cz/wiki/Diagnostics/Magnetic/MirnovCoilsAtLimiter/Theory/diagnostics_mirnov)
 
 **Fast Cameras**
-- [Fast Cameras on GitLab](https://gitlab.com/golem-tokamak/dirigent/-/tree/master/Diagnostics/FastCameras/FastCamSW4WinPC)
+- [description on GitLab](https://gitlab.com/golem-tokamak/dirigent/-/tree/master/Diagnostics/FastCameras/FastCamSW4WinPC)
 
 **MSL probe:** 
 - See section [MSL probe](MSL_probe.md) for more details.
@@ -105,5 +105,3 @@ diagnostics used with relevant links
 ### Results Summary
 - see [Summary and Outlook](results_summary.md)
 
-## References
-[1] [Yanovskiy, J., *Private communi*, 2021]()

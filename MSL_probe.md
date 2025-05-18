@@ -2,7 +2,7 @@
 
 - consists of 3 Hall sensors and 3 coils (similar to Mirnov coils)  
   Some useful links:
-  * [GOLEM wiki page devoted to Hall probe](http://golem.fjfi.cvut.cz/wiki/Diagnostics/Magnetic/HallProbes/diagnostics_hall) (The information might be out of date.)
+  * [GOLEM wiki page devoted to Hall probe](http://golem.fjfi.cvut.cz/wiki/Diagnostics/Magnetic/HallProbes/diagnostics_hall) (The information might be outdated.)
   * [Measurement of safety factor using Hall probe](http://golem.fjfi.cvut.cz/wiki/Library/CASTOR/KovarikK_Measurements_06.pdf)
 
 <div align="center">
