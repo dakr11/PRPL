@@ -9,8 +9,8 @@ V následujícím jsou shrnuty všemožné postřehy, reporty a obecně vývoj c
 
 ### 23.10.2023
 
-Komunikace s Dr. Ivanem Ďuranem a Dr. Tomášem Markovičem ([email](emails/Re_Měření_magnetických_polí_na_tokamaku_GOLEM.eml)).  
-To podstatné/nejzajímavější shrnuto v 
+Komunikace s Dr. Ivanem Ďuranem a Dr. Tomášem Markovičem. 
+To podstatné/nejzajímavější shrnuto v [email_summary](emails/email_summary.md)
 
 ### 2.11.2023 – První návštěva ÚFP
 
@@ -54,10 +54,6 @@ Oba dva počítače hlásí chybu, sice v trochu odlišné podobě, ale vždy jd
 - výpočet B numerickým způsobem otestován na jednoduchém příkladu, který má analytické řešení, viz `Test_B.m`; ve skriptu také porovnán numerický přístup s analytickým (využívající ell.int.) – na příkladu jedné cívky  
 - napsán skript pro předpočítání a uložení hodnot magnetického pole vytvářeného jednotkovým proudem protékajícím cívkami stabilizace v daném bodě mřížky – uloženo jako `Bcoils_attempt01.mat`
 
-#### TODO:
-
-- [ ] Zpracovat výsledky porovnání metod + testování výpočtu dle `Test_B.m` (různé vzdálenosti, různá n, apod.)  
-- [ ] Nutno zkontrolovat/upravit skript pro výpočet vzájemné indukčnosti, zejména ten numerický přístup bude možná špatně (prohozené souřadnice, apod.)
 
 ### 24.3.2024
 
@@ -147,23 +143,23 @@ RadQuadr: 46320
 
 ---
 
-**Dipol nebo Kvadrupol? – Email z 25.2.2020**  
+**Dipol nebo Kvadrupol?**  
 > Interpretoval bych to takto. Vinutí na GOLEMu je kvadrupol, neboť obsahuje 4 vodiče. Tyto jsou pak zapojeny tak, že vytvářejí dipólové magnetické pole.  
-> *Dr. Stöckel*
+> *Dr. Stöckel, Email z 25.2.2020*
 
 ---
 
-### Zpracování
+#### Zpracování
 
 1. Inner Quadrupole  
 2. Better identification of the model constants for vertical and radial stab.  
 3. Vertical Stray Field from toroidal field coils  
 
-**TODO:**  
+<!-- **TODO:**  
 Z porovnání výbojů z 16.9. (kdy jsme ještě neřešili kvadrupol) a výbojů z 17.9. by mělo být vidět, zda tam bylo přítomné nějaké pole, které tam být nemělo.
 
 **TODO:**  
-Instead of that “dynamic” B–S figure for one shot, take max. B at max current of many shots and compare.
+Instead of that “dynamic” B–S figure for one shot, take max. B at max current of many shots and compare. -->
 
 ---
 
