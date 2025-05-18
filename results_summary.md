@@ -54,8 +54,6 @@
 
 **Second Session**
 
-## Measurements
-
 
 ## Magnetic Field Orientation
 <p align="center">

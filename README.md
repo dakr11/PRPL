@@ -99,7 +99,8 @@ diagnostics used with relevant links
 ### Reports
 - [introductory presentation](presentation/PRPL_uvodni_prezentace.pdf)
 - [middle presentation](presentation/PRPLA_introductory_presentation.pdf)
-- [first session 26.4.2024](experiments/2024_04_26/GOLEM_MSL_24_04_26.pdf)
+- [report from first session 26.4.2024](experiments/2024_04_26/GOLEM_MSL_24_04_26.pdf)
+- [report from second session 16.-17.9.2024](experiments/PRPL_report_Session02.pdf)
 
 ### Results Summary
 - see [Summary and Outlook](results_summary.md)
