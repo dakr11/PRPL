@@ -114,3 +114,11 @@ Based on the orientation of the MSL probe and the measured signal, the orientati
 </div>
 
 
+### Outlook
+- Verify the value of $\tau_{cs}$ using the measurements provided in  [A.Kubincova BP](https://dspace.cvut.cz/bitstream/handle/10467/97036/F4-BP-2021-Kubincova-Adela-bp_fttf_21_kubincova.pdf?sequence=-1&isAllowed=y), specifically the data from the referenced discharge and the saddle coil measurement
+- contact V. Yanovskiy to get an insight into how the value ($\tau_{cs}$) was obtained using the CARIDDI code
+- possibility of using stabilization to assist with breakdown
+- analyze the impact of the transformer core
+- a large amount of [data](experiments) has been collected, but not all of it has been analysed
+
+
